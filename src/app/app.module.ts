@@ -50,6 +50,7 @@ import { HomeComponent } from './layouts/home/home.component';
 import { LandingComponent } from './views/home/landing/landing.component';
 import { CardsProductComponent } from './components/cards/cards-product/cards-product.component';
 import { TableUploadComponent } from './components/tables/table-upload/table-upload.component';
+import { AswerSectionComponent } from './components/aswer-section/aswer-section.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +90,8 @@ import { TableUploadComponent } from './components/tables/table-upload/table-upl
     HomeComponent,
     LandingComponent,
     CardsProductComponent,
-    TableUploadComponent
+    TableUploadComponent,
+    AswerSectionComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
