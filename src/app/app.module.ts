@@ -48,6 +48,7 @@ import { StockComponent } from './views/home/stock/stock.component';
 import { UploadComponent } from './views/home/upload/upload.component';
 import { HomeComponent } from './layouts/home/home.component';
 import { LandingComponent } from './views/home/landing/landing.component';
+import { CardsProductComponent } from './components/cards/cards-product/cards-product.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { LandingComponent } from './views/home/landing/landing.component';
     StockComponent,
     UploadComponent,
     HomeComponent,
-    LandingComponent
+    LandingComponent,
+    CardsProductComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
