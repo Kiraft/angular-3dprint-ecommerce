@@ -19,9 +19,6 @@ import { LoginComponent } from "./views/auth/login/login.component";
 import { RegisterComponent } from "./views/auth/register/register.component";
 
 // no layouts views
-import { IndexComponent } from "./views/index/index.component";
-import { LandingComponent } from "./views/landing/landing.component";
-import { ProfileComponent } from "./views/profile/profile.component";
 
 // components for views and layouts
 
@@ -47,8 +44,10 @@ import { PagesDropdownComponent } from "./components/dropdowns/pages-dropdown/pa
 import { NotificationDropdownComponent } from "./components/dropdowns/notification-dropdown/notification-dropdown.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user-dropdown.component";
-import { StockComponent } from './views/index/stock/stock.component';
-import { UploadComponent } from './views/index/upload/upload.component';
+import { StockComponent } from './views/home/stock/stock.component';
+import { UploadComponent } from './views/home/upload/upload.component';
+import { HomeComponent } from './layouts/home/home.component';
+import { LandingComponent } from './views/home/landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -83,11 +82,10 @@ import { UploadComponent } from './views/index/upload/upload.component';
     TablesComponent,
     LoginComponent,
     RegisterComponent,
-    IndexComponent,
-    LandingComponent,
-    ProfileComponent,
     StockComponent,
     UploadComponent,
+    HomeComponent,
+    LandingComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

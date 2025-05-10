@@ -14,12 +14,11 @@ import { TablesComponent } from "./views/admin/tables/tables.component";
 import { LoginComponent } from "./views/auth/login/login.component";
 import { RegisterComponent } from "./views/auth/register/register.component";
 
-// no layouts views
-import { IndexComponent } from "./views/index/index.component";
-import { LandingComponent } from "./views/landing/landing.component";
-import { ProfileComponent } from "./views/profile/profile.component";
-import { StockComponent } from "./views/index/stock/stock.component";
-import { UploadComponent } from "./views/index/upload/upload.component";
+// no layouts
+import { HomeComponent } from './layouts/home/home.component';
+import { StockComponent } from "./views/home/stock/stock.component";
+import { UploadComponent } from "./views/home/upload/upload.component";
+import { LandingComponent } from './views/home/landing/landing.component';
 
 
 const routes: Routes = [
@@ -49,10 +48,12 @@ const routes: Routes = [
   // { path: "profile", component: ProfileComponent },
   // { path: "landing", component: LandingComponent },
   { path: "",
-    component: IndexComponent,
+    component: HomeComponent,
     children: [
       { path:"stock", component: StockComponent},
-      { path: "upload", component: UploadComponent}
+      { path: "upload", component: UploadComponent},
+      { path: "landing", component: LandingComponent},
+      { path: "", redirectTo: "landing", pathMatch: "full" }
     ]
   },
   { path: "**", redirectTo: "", pathMatch: "full" },
