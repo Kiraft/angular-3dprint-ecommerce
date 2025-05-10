@@ -49,6 +49,7 @@ import { UploadComponent } from './views/home/upload/upload.component';
 import { HomeComponent } from './layouts/home/home.component';
 import { LandingComponent } from './views/home/landing/landing.component';
 import { CardsProductComponent } from './components/cards/cards-product/cards-product.component';
+import { TableUploadComponent } from './components/tables/table-upload/table-upload.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { CardsProductComponent } from './components/cards/cards-product/cards-pr
     UploadComponent,
     HomeComponent,
     LandingComponent,
-    CardsProductComponent
+    CardsProductComponent,
+    TableUploadComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

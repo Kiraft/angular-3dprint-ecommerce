@@ -1,0 +1,164 @@
+<section class="flex flex-col justify-center w-full h-full px-96">
+  <h1 class="text-xl font-bold mb-1">Piezas y especificaciones</h1>
+  <!-- Table -->
+  <div class="w-full max-w-6xl mx-auto bg-white shadow-lg rounded-sm">
+    <div class="p-3">
+      <div class="overflow-x-auto">
+        <table class="table-auto w-full">
+          <thead
+            class="text-xs font-semibold uppercase text-gray-400 bg-gray-50"
+          >
+            <tr>
+              <th class="p-2 whitespace-nowrap">
+                <div class="text-left font-bold text-black">Visor 3D</div>
+              </th>
+              <th class="p-2 whitespace-nowrap">
+                <div class="font-bold text-black text-left">Piezas</div>
+              </th>
+              <th class="p-2 whitespace-nowrap">
+                <div class="font-bold text-black text-left">Material</div>
+              </th>
+              <th class="p-2 whitespace-nowrap">
+                <div class="font-bold text-black text-center">
+                  Precio Unitario
+                </div>
+              </th>
+              <th class="p-2 whitespace-nowrap">
+                <div class="font-bold text-black text-center">Cantidad</div>
+              </th>
+              <th class="p-2 whitespace-nowrap">
+                <div class="font-bold text-black text-center">Precio total</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="text-sm divide-y divide-gray-100">
+            <tr>
+              <td class="align-top p-2 whitespace-nowrap">
+                <div class="flex items-center w-16">
+                  <div class="w-20 h-20 flex-shrink-0 mr-2 sm:mr-3">
+                    <img
+                      class="rounded-full"
+                      src="assets/img/model.png"
+                      width="100"
+                      height="100"
+                      alt="Alex Shatov"
+                    />
+                  </div>
+                </div>
+              </td>
+
+              <td class="p-2 align-top whitespace-normal break-words max-w-24">
+                <div class="text-left max-w-48">
+                  <p>test_model.stl 100.00x38.66x50.00mm</p>
+                </div>
+              </td>
+
+              <td
+                class="flex flex-col gap-2 justify-start items-start p-2 align-top"
+              >
+                <div class="w-full">
+                  <p class="text-left mb-1">Material:</p>
+                  <button
+                    class="w-full text-left rounded-lg border border-black py-1 px-2 font-sans text-xs uppercase text-black"
+                    data-ripple-dark="true"
+                  >
+                    PLA
+                  </button>
+                </div>
+                <div class="w-full">
+                  <p class="text-left mb-1">Color:</p>
+                  <button
+                    class="w-full text-left rounded-lg border border-black py-1 px-2 font-sans text-xs uppercase text-black"
+                    data-ripple-dark="true"
+                  >
+                    Blanco
+                  </button>
+                </div>
+                <div class="w-full">
+                  <p class="text-left mb-1">Relleno:</p>
+                  <button
+                    class="w-full text-left rounded-lg border border-black py-1 px-2 font-sans text-xs uppercase text-black"
+                    data-ripple-dark="true"
+                  >
+                    20%
+                  </button>
+                </div>
+              </td>
+
+              <td class="p-2 align-top whitespace-nowrap">
+                <div class="text-center">Por determinar</div>
+              </td>
+
+              <td
+                class="flex items-center justify-center p-2 whitespace-nowrap"
+              >
+                <!-- Counter component -->
+                <form class="max-w-xs mx-auto">
+                  <div class="relative flex items-center">
+                    <button
+                      type="button"
+                      id="decrement-button"
+                      data-input-counter-decrement="counter-input"
+                      class="shrink-0 bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none"
+                    >
+                      <svg
+                        class="w-2.5 h-2.5 text-gray-900 dark:text-white"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 18 2"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M1 1h16"
+                        />
+                      </svg>
+                    </button>
+                    <input
+                      type="text"
+                      id="counter-input"
+                      data-input-counter
+                      class="shrink-0 text-gray-900 dark:text-white border-0 bg-transparent text-sm font-normal focus:outline-none focus:ring-0 max-w-[2.5rem] text-center"
+                      placeholder=""
+                      value="12"
+                      required
+                    />
+                    <button
+                      type="button"
+                      id="increment-button"
+                      data-input-counter-increment="counter-input"
+                      class="shrink-0 bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none"
+                    >
+                      <svg
+                        class="w-2.5 h-2.5 text-gray-900 dark:text-white"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 18 18"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 1v16M1 9h16"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </form>
+              </td>
+
+              <td class="p-2 align-top whitespace-nowrap">
+                <div class="text-center">Por determinar</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

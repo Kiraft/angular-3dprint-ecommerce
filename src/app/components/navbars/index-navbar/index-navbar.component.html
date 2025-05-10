@@ -1,27 +1,17 @@
-<nav
-  class="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-[#2C2424] shadow"
->
-  <div
-    class="container px-4 mx-auto flex flex-wrap items-center justify-between"
-  >
-    <div
-      class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start"
-    >
+<nav class="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-[#2C2424] shadow">
+  <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+
+    <!-- Logo -->
+    <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
       <a
         [routerLink]="['/']"
         class="text-white text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
-        href="#pablo"
       >
         Vulkano Makers
       </a>
-      <button
-        class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-        type="button"
-        (click)="setNavbarOpen()"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
     </div>
+
+    <!-- Enlaces -->
     <div
       class="lg:flex flex-grow items-center"
       [ngClass]="{ hidden: !navbarOpen, block: navbarOpen }"
@@ -29,35 +19,38 @@
     >
       <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
 
-        <li class="flex items-center">
-          <button
-            class="bg-[#2C2424] text-white active:bg-[#2C2424] text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
-            type="button"
-
+        <!-- Enlace 1 -->
+        <li class="flex justify-center items-center">
+          <a
+            [routerLink]="['/stock']"
+            class="bg-[#2C2424] text-white text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg"
           >
-            <i class=""></i> MODELOS EN STOCK
-          </button>
+            MODELOS EN STOCK
+          </a>
         </li>
 
-        <li class="flex items-center">
-          <button
-            class="bg-[#2C2424] text-white active:bg-[#2C2424] text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
-            type="button"
+        <!-- Enlace 2 -->
+        <li class="flex justify-center items-center mr-4">
+          <a
+            [routerLink]="['/cuenta']"
+            class="bg-[#2C2424] text-white text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg"
             style="border: white solid 1px;"
           >
-            <i class=""></i> Cuenta
-          </button>
+            Cuenta
+          </a>
         </li>
 
-        <li class="flex items-center">
-          <button
-            class="bg-[#E7723F] text-white active:bg-[#E7723F] text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
-            type="button"
-            style="background-color: #E7723F;"
+        <!-- Enlace 3 -->
+        <li class="flex justify-center items-center">
+          <a
+            [routerLink]="['/upload']"
+            class="bg-[#E7723F] text-white text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg "
           >
-            <i class=""></i> Cortizacion Online
-          </button>
+            Cotización Online
+          </a>
         </li>
+
+        <!-- Dropdown -->
         <app-index-dropdown class="block"></app-index-dropdown>
       </ul>
     </div>
