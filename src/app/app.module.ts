@@ -51,8 +51,12 @@ import { LandingComponent } from './views/home/landing/landing.component';
 import { CardsProductComponent } from './components/cards/cards-product/cards-product.component';
 import { TableUploadComponent } from './components/tables/table-upload/table-upload.component';
 import { AswerSectionComponent } from './components/aswer-section/aswer-section.component';
-import { AccountComponent } from './views/account/account.component';
+import { AccountComponent } from './layouts/account/account.component';
 import { AccountNavbarComponent } from './components/navbars/account-navbar/account-navbar.component';
+import { SidebarAccountComponent } from './components/sidebar-account/sidebar-account.component';
+import { ProfileComponent } from './views/account/profile/profile.component';
+import { ShippingComponent } from './views/account/shipping/shipping.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -95,9 +99,12 @@ import { AccountNavbarComponent } from './components/navbars/account-navbar/acco
     TableUploadComponent,
     AswerSectionComponent,
     AccountComponent,
-    AccountNavbarComponent
+    AccountNavbarComponent,
+    SidebarAccountComponent,
+    ProfileComponent,
+    ShippingComponent
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

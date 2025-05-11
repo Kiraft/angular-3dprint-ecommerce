@@ -1,19 +1,41 @@
-<app-account-navbar></app-account-navbar>
-<div class="px-72">
   <aside
     id="default-sidebar"
     class="w-80 h-screen transition-transform -translate-x-full sm:translate-x-0"
     aria-label="Sidebar"
   >
-    <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+    <div class="h-full px-3 py-4 overflow-y-auto bg-[#E6E6E6]">
       <ul class="space-y-2 font-medium">
-        <li>
+                <li>
           <a
-            href="#"
-            class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            routerLink="/account/profile"
+            class="flex items-center p-2 text-[#4E4845] rounded-lg dark:text-[#4E4845] hover:bg-gray-100 dark:hover:bg-[#E7723F] group"
           >
             <svg
-              class="w-[30px] h-[30px] text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
+              class="w-[30px] h-[30px] text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-[#4E4845] dark:group-hover:text-[#4E4845]"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+
+            <span class="ms-3">Informacion personal</span>
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/account/shipping"
+            class="flex items-center p-2 text-[#4E4845] rounded-lg dark:text-[#4E4845] hover:bg-gray-100 dark:hover:bg-[#E7723F] group"
+          >
+            <svg
+              class="w-[30px] h-[30px] text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-[#4E4845] dark:group-hover:text-[#4E4845]"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -35,10 +57,10 @@
         <li>
           <a
             href="#"
-            class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            class="flex items-center p-2 text-[#4E4845] rounded-lg dark:text-[#4E4845] hover:bg-gray-100 dark:hover:bg-[#E7723F] group"
           >
             <svg
-              class="w-[30px] h-[30px] text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
+              class="w-[30px] h-[30px] text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-[#4E4845] dark:group-hover:text-[#4E4845]"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -56,37 +78,14 @@
             <span class="ms-3">Direcciones</span>
           </a>
         </li>
-        <li>
-          <a
-            href="#"
-            class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-          >
-            <svg
-              class="w-[30px] h-[30px] text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
-                clip-rule="evenodd"
-              />
-            </svg>
 
-            <span class="ms-3">Informacion personal</span>
-          </a>
-        </li>
         <li>
           <a
             href="#"
-            class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            class="flex items-center p-2 text-[#4E4845] rounded-lg dark:text-[#4E4845] hover:bg-gray-100 dark:hover:bg-[#E7723F] group"
           >
             <svg
-              class="w-[30px] h-[30px] text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
+              class="w-[30px] h-[30px] text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-[#4E4845] dark:group-hover:text-[#4E4845]"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -112,10 +111,10 @@
         <li>
           <a
             href="#"
-            class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            class="flex items-center p-2 text-[#4E4845] rounded-lg dark:text-[#4E4845] hover:bg-gray-100 dark:hover:bg-[#E7723F] group"
           >
             <svg
-              class="w-[30px] h-[30px] text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-white dark:group-hover:text-white"
+              class="w-[30px] h-[30px] text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-[#4E4845] dark:group-hover:text-[#4E4845]"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -138,8 +137,3 @@
       </ul>
     </div>
   </aside>
-
-  <div class="w-64 h-32 bg-red-700 text-white p-4 w-full">
-    <h1>Contenido</h1>
-  </div>
-</div>

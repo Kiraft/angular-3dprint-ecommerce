@@ -19,7 +19,9 @@ import { HomeComponent } from './layouts/home/home.component';
 import { StockComponent } from "./views/home/stock/stock.component";
 import { UploadComponent } from "./views/home/upload/upload.component";
 import { LandingComponent } from './views/home/landing/landing.component';
-import { AccountComponent } from './views/account/account.component';
+import { AccountComponent } from './layouts/account/account.component';
+import { ProfileComponent } from './views/account/profile/profile.component';
+import { ShippingComponent } from './views/account/shipping/shipping.component';
 
 
 const routes: Routes = [
@@ -49,9 +51,10 @@ const routes: Routes = [
     path: "account",
     component: AccountComponent,
     children: [
-      { path: "perfil", component: LoginComponent },
+      { path: "profile", component: ProfileComponent },
       { path: "address", component: RegisterComponent },
-      { path: "pedidos", redirectTo: "perfil", pathMatch: "full" },
+      { path: "shipping", component: ShippingComponent },
+      { path: "", redirectTo: "profile", pathMatch: "full" },
     ],
   },
 
