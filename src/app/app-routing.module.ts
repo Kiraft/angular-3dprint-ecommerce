@@ -19,6 +19,7 @@ import { HomeComponent } from './layouts/home/home.component';
 import { StockComponent } from "./views/home/stock/stock.component";
 import { UploadComponent } from "./views/home/upload/upload.component";
 import { LandingComponent } from './views/home/landing/landing.component';
+import { AccountComponent } from './views/account/account.component';
 
 
 const routes: Routes = [
@@ -44,9 +45,16 @@ const routes: Routes = [
       { path: "", redirectTo: "login", pathMatch: "full" },
     ],
   },
-  // no layout views
-  // { path: "profile", component: ProfileComponent },
-  // { path: "landing", component: LandingComponent },
+    {
+    path: "account",
+    component: AccountComponent,
+    children: [
+      { path: "perfil", component: LoginComponent },
+      { path: "address", component: RegisterComponent },
+      { path: "pedidos", redirectTo: "perfil", pathMatch: "full" },
+    ],
+  },
+
   { path: "",
     component: HomeComponent,
     children: [

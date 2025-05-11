@@ -52,6 +52,7 @@ import { CardsProductComponent } from './components/cards/cards-product/cards-pr
 import { TableUploadComponent } from './components/tables/table-upload/table-upload.component';
 import { AswerSectionComponent } from './components/aswer-section/aswer-section.component';
 import { AccountComponent } from './views/account/account.component';
+import { AccountNavbarComponent } from './components/navbars/account-navbar/account-navbar.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +94,8 @@ import { AccountComponent } from './views/account/account.component';
     CardsProductComponent,
     TableUploadComponent,
     AswerSectionComponent,
-    AccountComponent
+    AccountComponent,
+    AccountNavbarComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
