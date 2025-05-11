@@ -14,15 +14,15 @@
     <div class="flex justify-between items-center">
       <p>{{ item.question }}</p>
       <button (click)="toggleAnswer(item.id)">
-        <i class="fas fa-plus-circle text-3xl" style="color: #e66b19"></i>
+        <i [ngClass]="item.open ? 'fas fa-minus text-3xl': 'fas fa-plus-circle text-3xl'" style="color: #e66b19"></i>
       </button>
+
     </div>
     <div class="w-full border-t border-gray-300 mb-4 mt-1"></div>
-        @if (item.open) {
-      <div class="text-left text-sm mt-2">
-        <p>{{ item.answer }}</p>
-      </div>
-    }
-    }
+    @if (item.open) {
+    <div class="text-left text-sm mt-2">
+      <p>{{ item.answer }}</p>
+    </div>
+    } }
   </div>
 </section>
