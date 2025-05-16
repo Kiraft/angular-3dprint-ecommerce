@@ -6,4 +6,11 @@ import { Component } from '@angular/core';
 })
 export class TableUploadComponent {
 
+  counter = 1;
+
+  addCounter() {
+
+  }
+
+
 }

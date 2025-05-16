@@ -1,7 +1,6 @@
 
   <a
     class="hover:text-blueGray-500 text-white px-3 py-2 flex items-center text-xs uppercase font-bold"
-    href="#pablo"
     (click)="toggleDropdown($event)"
     #btnDropdownRef
   >
@@ -23,13 +22,13 @@
     Carrito
   </span>
   <a
-    [routerLink]="['/admin/dashboard']"
+    [routerLink]="['/cart']"
     class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
   >
     Cotizaciones
   </a>
   <a
-    [routerLink]="['/admin/settings']"
+    [routerLink]="['/cart']"
     class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
   >
     Stock

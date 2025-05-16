@@ -23,7 +23,6 @@ import { RegisterComponent } from "./views/auth/register/register.component";
 // components for views and layouts
 
 import { AdminNavbarComponent } from "./components/navbars/admin-navbar/admin-navbar.component";
-import { AuthNavbarComponent } from "./components/navbars/auth-navbar/auth-navbar.component";
 import { CardBarChartComponent } from "./components/cards/card-bar-chart/card-bar-chart.component";
 import { CardLineChartComponent } from "./components/cards/card-line-chart/card-line-chart.component";
 import { CardPageVisitsComponent } from "./components/cards/card-page-visits/card-page-visits.component";
@@ -36,7 +35,6 @@ import { FooterAdminComponent } from "./components/footers/footer-admin/footer-a
 import { FooterComponent } from "./components/footers/footer/footer.component";
 import { FooterSmallComponent } from "./components/footers/footer-small/footer-small.component";
 import { HeaderStatsComponent } from "./components/headers/header-stats/header-stats.component";
-import { IndexNavbarComponent } from "./components/navbars/index-navbar/index-navbar.component";
 import { MapExampleComponent } from "./components/maps/map-example/map-example.component";
 import { IndexDropdownComponent } from "./components/dropdowns/index-dropdown/index-dropdown.component";
 import { TableDropdownComponent } from "./components/dropdowns/table-dropdown/table-dropdown.component";
@@ -52,14 +50,16 @@ import { CardsProductComponent } from './components/cards/cards-product/cards-pr
 import { TableUploadComponent } from './components/tables/table-upload/table-upload.component';
 import { AswerSectionComponent } from './components/aswer-section/aswer-section.component';
 import { AccountComponent } from './layouts/account/account.component';
-import { AccountNavbarComponent } from './components/navbars/account-navbar/account-navbar.component';
 import { SidebarAccountComponent } from './components/sidebar-account/sidebar-account.component';
 import { ProfileComponent } from './views/account/profile/profile.component';
 import { ShippingComponent } from './views/account/shipping/shipping.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CartSummaryComponent } from './layouts/cart-summary/cart-summary.component';
+import { GlobalNavbarComponent } from './components/navbars/global-navbar/global-navbar.component';
 
 @NgModule({
   declarations: [
+    CartSummaryComponent,
     AppComponent,
     DashboardComponent,
     CardBarChartComponent,
@@ -81,9 +81,7 @@ import { FormsModule } from '@angular/forms';
     CardTableComponent,
     HeaderStatsComponent,
     MapExampleComponent,
-    AuthNavbarComponent,
     AdminNavbarComponent,
-    IndexNavbarComponent,
     AdminComponent,
     AuthComponent,
     MapsComponent,
@@ -99,12 +97,11 @@ import { FormsModule } from '@angular/forms';
     TableUploadComponent,
     AswerSectionComponent,
     AccountComponent,
-    AccountNavbarComponent,
     SidebarAccountComponent,
     ProfileComponent,
-    ShippingComponent
-  ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+    ShippingComponent,
+    GlobalNavbarComponent  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
