@@ -56,6 +56,7 @@ import { ShippingComponent } from './views/account/shipping/shipping.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CartSummaryComponent } from './layouts/cart-summary/cart-summary.component';
 import { GlobalNavbarComponent } from './components/navbars/global-navbar/global-navbar.component';
+import { CardCartComponent } from './components/cards/card-cart/card-cart.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +101,8 @@ import { GlobalNavbarComponent } from './components/navbars/global-navbar/global
     SidebarAccountComponent,
     ProfileComponent,
     ShippingComponent,
-    GlobalNavbarComponent  ],
+    GlobalNavbarComponent,
+    CardCartComponent  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
