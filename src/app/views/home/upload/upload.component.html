@@ -1,9 +1,14 @@
 <!-- Section de upload -->
-<section class="mt-28 mb-10 px-96 flex flex-col flex-wrap bg-white w-full">
+<section class="mt-16 mb-10 px-96 flex flex-col flex-wrap bg-white w-full">
   <h1 class="text-xl font-bold mb-1">ARRASTRA O CARGA TUS MODELOS</h1>
   <!-- File area -->
   <div class="flex border-orange-500 border-dashed border-2 w-auto h-[300px]">
-    <input #inputFileElement type="file" [hidden]="true" (change)="onSelectFile($event)">
+    <input
+      #inputFileElement
+      type="file"
+      [hidden]="true"
+      (change)="onSelectFile($event)"
+    />
 
     <div class="flex-1 flex items-center justify-center">
       <img src="assets/img/dragimage.png" alt="" class="max-w-[450px] h-auto" />
@@ -38,8 +43,8 @@
   </div>
 </section>
 
-<app-table-upload></app-table-upload>
-
+@if (archivos.length != 0) {
+  <app-table-upload [fileTransfer]="archivos[0].file"></app-table-upload>
 
   <section class="mt-4 mb-10 px-96 flex flex-col flex-wrap bg-white w-full">
     <div class="flex w-auto h-[300px]">
@@ -77,5 +82,6 @@
       </div>
     </div>
   </section>
+}
 
 <app-aswer-section></app-aswer-section>

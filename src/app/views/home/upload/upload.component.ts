@@ -6,6 +6,7 @@ interface FileModel  {
   type: string,
   name: string,
   size: number
+  file: File
 }
 
 @Component({
@@ -14,14 +15,14 @@ interface FileModel  {
 })
 export class UploadComponent implements OnInit {
   @ViewChild('inputFileElement') inputFileElement!: ElementRef;
-  archivos$!: Observable<FileModel[]>;
+  archivos: FileModel[] = [];
 
   constructor(private uploadFilesService: UploadFilesService){
 
   }
 
   ngOnInit(): void {
-    this.archivos$ = this.uploadFilesService.getFileUploadList();
+
   }
 
   selectFile(): void {
@@ -38,10 +39,11 @@ export class UploadComponent implements OnInit {
         type: file.type,
         name: file.name,
         size: file.size,
+        file: file
       };
 
       console.log('Archivo cargado:', event);
-      this.uploadFilesService.setFileUploadPush(fileData)
+      this.archivos.push(fileData)
     }
   }
 }

@@ -58,6 +58,7 @@ import { ConfirmComponent } from './views/cart/confirm/confirm.component';
 import { LoadingOverlayComponent } from './components/loading-overlay/loading-overlay.component';
 import { QuotesComponent } from './views/account/quotes/quotes.component';
 import { AsyncPipe } from '@angular/common';
+import { Preview3DComponent } from './components/preview3-d/preview3-d.component';
 
 
 @NgModule({
@@ -105,7 +106,8 @@ import { AsyncPipe } from '@angular/common';
     PaymentComponent,
     ConfirmComponent,
     LoadingOverlayComponent,
-    QuotesComponent
+    QuotesComponent,
+    Preview3DComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, AsyncPipe],
   providers: [],
