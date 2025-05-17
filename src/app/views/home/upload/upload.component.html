@@ -43,45 +43,51 @@
   </div>
 </section>
 
-@if (files.length != 0) {
-  <app-table-upload [fileTransfer]="files[0].file"></app-table-upload>
+@if (filesList$  | async; as resultObjets) {
 
-  <section class="mt-4 mb-10 px-96 flex flex-col flex-wrap bg-white w-full">
-    <div class="flex w-auto h-[300px]">
-      <div class="flex-1 flex items-center justify-center"></div>
+  @if (resultObjets.length != 0) {
 
-      <div class="flex-1 flex gap-3 flex-col items-center justify-center">
-        <h1 class="text-2xl font-bold mb- self-start">Resumen</h1>
-        <div
-          class="flex justify-between w-full border-[1px] border-black px-2 py-2"
-        >
-          <div>Estimacion de salida de planta</div>
-          <div>
-            <p class="font-bold">Por determinar</p>
-          </div>
-        </div>
+    <app-table-upload [fileTransfer]="resultObjets[0].file"></app-table-upload>
+    
+    <section class="mt-4 mb-10 px-96 flex flex-col flex-wrap bg-white w-full">
+      <div class="flex w-auto h-[300px]">
+        <div class="flex-1 flex items-center justify-center"></div>
 
-        <div
-          class="flex justify-between w-full border-[1px] border-black px-2 py-2"
-        >
-          <div>Total</div>
-          <div class="flex gap-1">
-            <p class="font-bold">Por determinar</p>
-            <span class="font-sans">(incl. IVA)</span>
-          </div>
-        </div>
-
-        <div class="flex flex-col items-center justify-center w-[400px]">
-          <button
-            class="w-full middle none center mr-4 rounded-lg bg-orange-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-            data-ripple-light="true"
+        <div class="flex-1 flex gap-3 flex-col items-center justify-center">
+          <h1 class="text-2xl font-bold mb- self-start">Resumen</h1>
+          <div
+            class="flex justify-between w-full border-[1px] border-black px-2 py-2"
           >
-            <span class="text-base">AGREGAR A CARRITO</span>
-          </button>
+            <div>Estimacion de salida de planta</div>
+            <div>
+              <p class="font-bold">Por determinar</p>
+            </div>
+          </div>
+
+          <div
+            class="flex justify-between w-full border-[1px] border-black px-2 py-2"
+          >
+            <div>Total</div>
+            <div class="flex gap-1">
+              <p class="font-bold">Por determinar</p>
+              <span class="font-sans">(incl. IVA)</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center w-[400px]">
+            <button
+              class="w-full middle none center mr-4 rounded-lg bg-orange-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              data-ripple-light="true"
+            >
+              <span class="text-base">AGREGAR A CARRITO</span>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  }
+
 }
+
 
 <app-aswer-section></app-aswer-section>

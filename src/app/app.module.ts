@@ -107,7 +107,7 @@ import { Preview3DComponent } from './components/preview3-d/preview3-d.component
     ConfirmComponent,
     LoadingOverlayComponent,
     QuotesComponent,
-    Preview3DComponent
+    Preview3DComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, AsyncPipe],
   providers: [],

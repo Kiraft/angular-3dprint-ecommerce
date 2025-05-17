@@ -8,6 +8,8 @@ export class TableUploadComponent {
   @Input() fileTransfer!: File;
   counter = 1;
 
+  @Input() fileModelsTranfer!: File[];
+
   addCounter() {
 
   }

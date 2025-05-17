@@ -1,18 +1,8 @@
 import { Injectable } from '@angular/core';
 import { delay, Observable, of } from 'rxjs';
+import Color3DModel from '../../../interfaces/Color3DModel';
+import Products3DModel from '../../../interfaces/Product3DModel';
 
-interface Color {
-  name: string;
-  colorCode: string;
-}
-
-interface ProductsStock {
-  img: string;
-  description: string;
-  price: number;
-  title: string;
-  colors: Color[];
-}
 
 @Injectable({
   providedIn: 'root',
@@ -20,8 +10,8 @@ interface ProductsStock {
 export class ProductsService {
   constructor() {}
 
-  getProducts(): Observable<ProductsStock[]> {
-    const dataProducts: ProductsStock[] = [
+  getProducts(): Observable<Products3DModel[]> {
+    const dataProducts: Products3DModel[] = [
       {
         img: 'assets/img/products/product2.jpg',
         description: 'Llavero de muy buena forma que mida aproximadamente',

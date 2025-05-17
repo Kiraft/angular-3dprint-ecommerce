@@ -1,26 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../../shared/services/home/products.service';
 import { Observable } from 'rxjs';
+import Color3DModel from '../../../interfaces/Color3DModel';
+import Products3DModel from '../../../interfaces/Product3DModel';
 
-interface Color {
-  name: string;
-  colorCode: string;
-}
 
-interface ProductsStock {
-  img: string;
-  description: string;
-  price: number;
-  title: string;
-  colors: Color[];
-}
 
 @Component({
   selector: 'app-stock',
   templateUrl: './stock.component.html',
 })
 export class StockComponent implements OnInit {
-  products$!: Observable<ProductsStock[]>;
+  products$!: Observable<Products3DModel[]>;
 
   constructor(private productService: ProductsService) {}
 

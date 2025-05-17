@@ -1,30 +1,25 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import File3DModel from '../../../interfaces/File3DModel';
 
-interface FileModel  {
-  type: string,
-  name: string,
-  size: number,
-  file: File
-}
 
 @Injectable({
   providedIn: 'root'
 })
 export class UploadFilesService {
 
-  private fileUploadSubject = new BehaviorSubject<FileModel[]>([]);
-  private fileUploadList: FileModel[] = [];
+  private fileUploadSubject = new BehaviorSubject<File3DModel[]>([]);
+  private fileUploadList: File3DModel[] = [];
 
   constructor() {}
 
   // ✅ Observable para que otros componentes puedan suscribirse
-  getFileUploadList(): Observable<FileModel[]> {
+  getFileUploadList(): Observable<File3DModel[]> {
     return this.fileUploadSubject.asObservable();
   }
 
   // ✅ Método para agregar archivo y emitir nueva lista
-  setFileUploadPush(file: FileModel): void {
+  setFileUploadPush(file: File3DModel): void {
     this.fileUploadList.push(file);
     this.fileUploadSubject.next([...this.fileUploadList]);
   }
