@@ -4,7 +4,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 interface FileModel  {
   type: string,
   name: string,
-  size: number
+  size: number,
+  file: File
 }
 
 @Injectable({

@@ -1,4 +1,4 @@
-import { UploadFilesService } from './../../../shared/services/home/upload-files.service';
+import { UploadFilesService } from '../../../shared/services/store/upload-files.service';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -15,10 +15,10 @@ interface FileModel  {
 })
 export class UploadComponent implements OnInit {
   @ViewChild('inputFileElement') inputFileElement!: ElementRef;
-  archivos: FileModel[] = [];
+  files: FileModel[] = [];
 
   constructor(private uploadFilesService: UploadFilesService){
-
+    
   }
 
   ngOnInit(): void {
@@ -43,7 +43,7 @@ export class UploadComponent implements OnInit {
       };
 
       console.log('Archivo cargado:', event);
-      this.archivos.push(fileData)
+      this.files.push(fileData)
     }
   }
 }
