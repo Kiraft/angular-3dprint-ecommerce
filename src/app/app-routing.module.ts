@@ -4,8 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthComponent } from './layouts/auth/auth.component';
 
-
-
 // auth views
 import { LoginComponent } from './views/auth/login/login.component';
 import { RegisterComponent } from './views/auth/register/register.component';
@@ -19,10 +17,12 @@ import { AccountComponent } from './layouts/account/account.component';
 import { ProfileComponent } from './views/account/profile/profile.component';
 import { ShippingComponent } from './views/account/shipping/shipping.component';
 import { CartSummaryComponent } from './layouts/cart-summary/cart-summary.component';
+import { CartStockComponent } from './views/cart/cart-stock/cart-stock.component';
+import { PaymentComponent } from './layouts/payment/payment.component';
+import { ConfirmComponent } from './views/cart/confirm/confirm.component';
+import { QuotesComponent } from './views/account/quotes/quotes.component';
 
 const routes: Routes = [
-
-
   // auth views
   {
     path: 'auth',
@@ -40,15 +40,28 @@ const routes: Routes = [
       { path: 'profile', component: ProfileComponent },
       { path: 'address', component: RegisterComponent },
       { path: 'shipping', component: ShippingComponent },
+      { path: 'quotes', component: QuotesComponent },
+
       { path: '', redirectTo: 'profile', pathMatch: 'full' },
     ],
   },
 
-    {
+  {
     path: 'cart',
     component: CartSummaryComponent,
     children: [
-      { path: '', redirectTo: 'profile', pathMatch: 'full' },
+      { path: 'summary', component: CartStockComponent },
+      { path: 'confirm', component: ConfirmComponent },
+      { path: '', redirectTo: 'summary', pathMatch: 'full' },
+    ],
+  },
+  {
+    path: 'payment',
+    component: PaymentComponent,
+    children: [
+      { path: 'cart-stock', component: CartStockComponent },
+      { path: 'payment', component: PaymentComponent },
+      { path: '', redirectTo: 'cart-stock', pathMatch: 'full' },
     ],
   },
 

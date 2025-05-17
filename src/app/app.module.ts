@@ -52,6 +52,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CartSummaryComponent } from './layouts/cart-summary/cart-summary.component';
 import { GlobalNavbarComponent } from './components/navbars/global-navbar/global-navbar.component';
 import { CardCartComponent } from './components/cards/card-cart/card-cart.component';
+import { CartStockComponent } from './views/cart/cart-stock/cart-stock.component';
+import { PaymentComponent } from './layouts/payment/payment.component';
+import { ConfirmComponent } from './views/cart/confirm/confirm.component';
+import { LoadingOverlayComponent } from './components/loading-overlay/loading-overlay.component';
+import { QuotesComponent } from './views/account/quotes/quotes.component';
+import { AsyncPipe } from '@angular/common';
 
 
 @NgModule({
@@ -94,9 +100,14 @@ import { CardCartComponent } from './components/cards/card-cart/card-cart.compon
     ProfileComponent,
     ShippingComponent,
     GlobalNavbarComponent,
-    CardCartComponent
+    CardCartComponent,
+    CartStockComponent,
+    PaymentComponent,
+    ConfirmComponent,
+    LoadingOverlayComponent,
+    QuotesComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, AsyncPipe],
   providers: [],
   bootstrap: [AppComponent],
 })

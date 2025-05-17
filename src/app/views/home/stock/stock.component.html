@@ -38,15 +38,10 @@
     </div>
   </div>
 
-  <!-- Products -->
   <!-- TODO: Cuando este en endpoint listo podemos iterar -->
   <div class="flex flex-wrap items-center justify-center mt-16">
-    <app-cards-product class=""></app-cards-product>
-    <app-cards-product></app-cards-product>
-    <app-cards-product></app-cards-product>
-    <app-cards-product></app-cards-product>
-    <app-cards-product></app-cards-product>
-    <app-cards-product></app-cards-product>
+    @if (products$ | async; as result) { @for (item of result; track $index) {
+    <app-cards-product [img]="item.img"></app-cards-product>
+    } }
   </div>
-
 </section>
