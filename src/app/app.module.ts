@@ -63,6 +63,7 @@ import { ModalColorsComponent } from './components/modals/modal-colors/modal-col
 import { ButtonColorComponent } from './components/buttons/button-color/button-color.component';
 import { ModalMaterialsComponent } from './components/modals/modal-materials/modal-materials.component';
 import { ButtonsMaterialComponent } from './components/buttons/buttons-material/buttons-material.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -117,7 +118,7 @@ import { ButtonsMaterialComponent } from './components/buttons/buttons-material/
     ModalMaterialsComponent,
     ButtonsMaterialComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, AsyncPipe, NgStyle],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, AsyncPipe, NgStyle, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

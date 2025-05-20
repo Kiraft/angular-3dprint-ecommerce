@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { AuthService } from './../../shared/services/auth/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class SidebarAccountComponent {
 
+   constructor(private authService: AuthService, private router: Router) {}
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/auth/login']);
+  }
 }

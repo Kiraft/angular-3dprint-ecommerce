@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { Router } from "@angular/router";
+import { AuthService } from "../../../shared/services/auth/auth.service";
+
 
 @Component({
   selector: "app-login",
@@ -11,13 +13,20 @@ export class LoginComponent implements OnInit {
   email: string = '';
   password: string = '';
 
-  constructor(private router: Router) {}
-  login() {
-    if (this.email === 'kiraft' && this.password === '1234') {
+  constructor(private router: Router, private authService: AuthService) {}
+
+  ngOnInit(): void {
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['/account']);
+    }
+  }
+
+  login(): void {
+    const success = this.authService.login(this.email, this.password);
+    if (success) {
       this.router.navigate(['/account']);
     } else {
       alert('Credenciales incorrectas');
     }
   }
-  ngOnInit(): void {}
 }

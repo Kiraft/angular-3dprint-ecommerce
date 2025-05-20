@@ -6,5 +6,6 @@ export default interface Products3DModel {
   img: string;
   description: string;
   title: string;
-  name: string
+  name: string;
+  urlFile: string;
 }

@@ -43,7 +43,7 @@
   <!-- TODO: Cuando este en endpoint listo podemos iterar -->
   <div class="flex flex-wrap items-center justify-center mt-16 gap-4">
     @if (filteredProducts$ | async; as result) { @for (item of result; track $index) {
-    <app-cards-product [img]="item.img" [title]="item.title" [description]="item.description"></app-cards-product>
+    <app-cards-product [fileModelUrl]="item.urlFile" [img]="item.img" [title]="item.title" [description]="item.description"></app-cards-product>
     } }
   </div>
 </section>

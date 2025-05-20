@@ -81,7 +81,7 @@
 
         <li>
           <a
-            href="#"
+            routerLink="/account/quotes"
             class="flex items-center p-2 text-[#4E4845] rounded-lg dark:text-[#4E4845] hover:bg-gray-100 dark:hover:bg-[#E7723F] group"
           >
             <svg
@@ -130,8 +130,9 @@
                 d="M16 12H4m12 0-4 4m4-4-4-4m3-4h2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-2"
               />
             </svg>
-
-            <span class="ms-3">Cotizaciones</span>
+            <button (click)="logout()">
+              <span class="ms-3">Cerrar Sesion</span>
+            </button>
           </a>
         </li>
       </ul>

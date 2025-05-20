@@ -15,19 +15,23 @@ export class ProductsService {
         img: 'assets/img/products/product2.jpg',
         description: 'Llavero de muy buena forma que mida aproximadamente',
         title: 'LLavero de Cocodrilo',
-        name: "LLavero de Cocodrilo"
+        name: "LLavero de Cocodrilo",
+        urlFile: "assets/localmodels/SquareAnimals/Square_Croco.stl"
       },
       {
         img: 'assets/img/products/product3.jpg',
         description: 'Llavero minimalista de forma circular',
         title: 'LLavero codorniz',
-        name: 'LLavero codorniz'
+        name: 'LLavero codorniz',
+        urlFile: "assets/localmodels/amg3D/llavero harry potter triangulo.stl"
       },
       {
         img: 'assets/img/products/product4.jpg',
         description: 'Llavero de forma trigular con estetica moderna',
         title: 'LLavero de Triangulo',
         name: 'LLavero de Triangulo',
+        urlFile: "assets/localmodels/amg3D/llavero harry potter triangulo.stl"
+
       },
     ];
 
