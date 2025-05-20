@@ -12,6 +12,8 @@ export class SidebarAccountComponent {
 
   logout() {
     this.authService.logout();
-    this.router.navigate(['/auth/login']);
+    setTimeout(() => {
+      this.router.navigate(['/auth/login']);
+    }, 10);
   }
 }

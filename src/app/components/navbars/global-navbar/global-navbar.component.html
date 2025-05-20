@@ -29,16 +29,30 @@
           </a>
         </li>
 
-        <!-- Enlace 2 -->
-        <li class="flex justify-center items-center mr-4">
-          <a
-            [routerLink]="['/auth']"
-            class="bg-[#2C2424] text-white text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg"
-            style="border: white solid 1px;"
-          >
-            Cuenta
-          </a>
-        </li>
+        @if (isAutheticate()) {
+
+          <!-- Enlace 2 -->
+          <li class="flex justify-center items-center mr-4">
+            <a
+              [routerLink]="['/auth']"
+              class="bg-[#2C2424] text-white text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg"
+              style="border: white solid 1px;"
+            >
+              Cuenta
+            </a>
+          </li>
+        }@else{
+          <!-- Enlace 2 -->
+          <li class="flex justify-center items-center mr-4">
+            <a
+              [routerLink]="['/auth']"
+              class="bg-[#2C2424] text-white text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg"
+              style="border: white solid 1px;"
+            >
+              Acceder
+            </a>
+          </li>
+        }
 
         <!-- Enlace 3 -->
         <li class="flex justify-center items-center">

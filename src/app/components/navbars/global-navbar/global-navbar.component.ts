@@ -1,3 +1,4 @@
+import { AuthService } from './../../../shared/services/auth/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,11 +8,19 @@ import { Component } from '@angular/core';
 export class GlobalNavbarComponent {
   navbarOpen = false;
 
-  constructor() {}
+  constructor(private AuthService: AuthService) {
 
-  ngOnInit(): void {}
+  }
+
+  ngOnInit(): void {
+
+  }
 
   setNavbarOpen() {
     this.navbarOpen = !this.navbarOpen;
+  }
+
+  isAutheticate(): boolean {
+    return this.AuthService.isAuthenticated()
   }
 }

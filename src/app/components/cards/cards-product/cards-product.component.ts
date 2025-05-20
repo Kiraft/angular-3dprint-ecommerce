@@ -19,7 +19,7 @@ export class CardsProductComponent {
     this.http.get(this.fileModelUrl, { responseType: 'blob' })
       .subscribe(blob => {
         // Crear un objeto tipo File
-        const file = new File([blob], 'ejemplo.stl', { type: 'application/sla' });
+        const file = new File([blob], `${this.title }.stl `, { type: 'application/sla' });
 
         const fileData: File3DModel = {
           type: file.type,
