@@ -1,7 +1,7 @@
 import { AfterViewInit } from '@angular/core';
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import * as THREE from 'three';
-import { STLLoader } from 'three/examples/jsm/loaders/STLLoader';
+import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
 
 @Component({
   selector: 'app-preview3-d',

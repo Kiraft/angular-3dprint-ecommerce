@@ -1,4 +1,5 @@
 import Color from "./Color3DModel";
+import File3DModel from "./File3DModel";
 
 
 export default interface Products3DModel {
@@ -7,4 +8,7 @@ export default interface Products3DModel {
   price: number;
   title: string;
   colors: Color[];
+  quantity?: number;
+  material?: string,
+  fileModel?: File3DModel
 }
