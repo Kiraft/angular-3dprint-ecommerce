@@ -5,7 +5,7 @@ import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
 
 @Component({
   selector: 'app-preview3-d',
-    template: `<div #viewerContainer class="w-full h-[300px]"></div>`
+    template: `<div #viewerContainer class="w-full h-[100px]"></div>`
 })
 export class Preview3DComponent implements AfterViewInit {
   @ViewChild('viewerContainer', { static: true }) viewerContainer!: ElementRef;

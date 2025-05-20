@@ -37,6 +37,11 @@
               <td class="align-top p-2 whitespace-nowrap">
                 <div class="flex items-center w-16">
                   <div class="w-20 h-20 flex-shrink-0 mr-2 sm:mr-3">
+                    <button (click)="deleteItemTable($index)">
+
+                      <i class="fas fa-times text-2xl" style="color: #ea3434; "></i>
+                    </button>
+
                     <app-preview3-d [file]="file.file"></app-preview3-d>
                   </div>
                 </div>
@@ -59,28 +64,31 @@
                 <div class="w-full">
                   <p class="text-left mb-1">Material:</p>
                   <button
+                  (click)="showModalMaterial($index)"
                     class="w-full text-left rounded-lg border border-black py-1 px-2 font-sans text-xs uppercase text-black"
                     data-ripple-dark="true"
                   >
-                    PLA
+                    {{file.material?.name}}
                   </button>
                 </div>
                 <div class="w-full">
                   <p class="text-left mb-1">Color:</p>
                   <button
+                  (click)="showModalColor($index)"
                     class="w-full text-left rounded-lg border border-black py-1 px-2 font-sans text-xs uppercase text-black"
                     data-ripple-dark="true"
                   >
-                    Blanco
+                    {{file.color?.name}}
                   </button>
                 </div>
                 <div class="w-full">
                   <p class="text-left mb-1">Relleno:</p>
                   <button
+
                     class="w-full text-left rounded-lg border border-black py-1 px-2 font-sans text-xs uppercase text-black"
                     data-ripple-dark="true"
                   >
-                    20%
+                    {{file.relleno}}%
                   </button>
                 </div>
               </td>
@@ -165,3 +173,18 @@
     </div>
   </div>
 </section>
+
+@switch (modalType$ | async) {
+  @case ('color') {
+    <app-modal-colors />
+  }
+  @case ('material') {
+    <app-modal-materials />
+  }
+  @case ('relleno') {
+    <!-- <app-modal-relleno /> -->
+  }
+}
+
+
+

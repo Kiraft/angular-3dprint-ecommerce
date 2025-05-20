@@ -1,10 +1,10 @@
 <div
-  class="rounded-lg border border-gray-200 bg-[#E6E6E6] p-4 shadow-sm  md:p-6"
+  class="rounded-lg border border-gray-200 bg-[#E6E6E6] px-4 py-28 shadow-sm  md:p-6"
 >
   <div
     class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0"
   >
-    <a href="#" class="shrink-0 md:order-1">
+    <!-- <a href="#" class="shrink-0 md:order-1">
       <img
         class="h-20 w-20 dark:hidden"
         src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg"
@@ -15,12 +15,14 @@
         src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg"
         alt="imac image"
       />
-    </a>
+    </a> -->
+    <app-preview3-d [file]="item.file" />
 
     <label for="counter-input" class="sr-only">Choose quantity:</label>
     <div class="flex items-center justify-between md:order-3 md:justify-end">
       <div class="flex items-center">
         <button
+          (click)="resCounter(id)"
           type="button"
           id="decrement-button"
           data-input-counter-decrement="counter-input"
@@ -48,10 +50,11 @@
           data-input-counter
           class="w-10 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 dark:text-white"
           placeholder=""
-          value="2"
+          value="{{item.quantity}}"
           required
         />
         <button
+          (click)="addCounter(id)"
           type="button"
           id="increment-button"
           data-input-counter-increment="counter-input"
@@ -83,8 +86,7 @@
       <a
         href="#"
         class="text-base font-medium text-gray-900 hover:underline dark:text-white"
-        >PC system All in One APPLE iMac (2023) mqrq3ro/a, Apple M3, 24" Retina
-        4.5K, 8GB, SSD 256GB, 10-core GPU, Keyboard layout INT</a
+        >{{item.name}}</a
       >
 
       <div class="flex items-center gap-4">
@@ -109,10 +111,11 @@
               d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
             />
           </svg>
-          Add to Favorites
+          Editar
         </button>
 
         <button
+          (click)="eliminarItem(id)"
           type="button"
           class="inline-flex items-center text-sm font-medium text-red-600 hover:underline dark:text-red-500"
         >

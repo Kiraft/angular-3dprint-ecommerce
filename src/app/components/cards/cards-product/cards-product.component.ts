@@ -5,7 +5,9 @@ import { Component, Input } from '@angular/core';
   templateUrl: './cards-product.component.html'
 })
 export class CardsProductComponent {
-  @Input() img = ""
-  
+  @Input() img!: string;
+  @Input() title!: string;
+  @Input() description!: string;
+
 
 }

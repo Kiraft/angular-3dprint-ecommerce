@@ -3,7 +3,6 @@ import { delay, Observable, of } from 'rxjs';
 import Color3DModel from '../../../interfaces/Color3DModel';
 import Products3DModel from '../../../interfaces/Product3DModel';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -15,53 +14,23 @@ export class ProductsService {
       {
         img: 'assets/img/products/product2.jpg',
         description: 'Llavero de muy buena forma que mida aproximadamente',
-        price: 200.0,
         title: 'LLavero de Cocodrilo',
-        colors: [
-          {
-            name: 'Rojo',
-            colorCode: '#CC0C0C',
-          },
-          {
-            name: 'Azul',
-            colorCode: '#66C2EA',
-          },
-        ],
+        name: "LLavero de Cocodrilo"
       },
-            {
+      {
         img: 'assets/img/products/product3.jpg',
-        description: 'Llavero de muy buena forma que mida aproximadamente',
-        price: 200.0,
-        title: 'LLavero de Cocodrilo',
-        colors: [
-          {
-            name: 'Rojo',
-            colorCode: '#CC0C0C',
-          },
-          {
-            name: 'Azul',
-            colorCode: '#66C2EA',
-          },
-          {
-            name: 'Verde',
-            colorCode: '#41CC70',
-          },
-        ],
+        description: 'Llavero minimalista de forma circular',
+        title: 'LLavero codorniz',
+        name: 'LLavero codorniz'
       },
-            {
+      {
         img: 'assets/img/products/product4.jpg',
-        description: 'Llavero de muy buena forma que mida aproximadamente',
-        price: 200.0,
-        title: 'LLavero de Cocodrilo',
-        colors: [
-          {
-            name: 'Verde',
-            colorCode: '#41CC70',
-          },
-        ],
+        description: 'Llavero de forma trigular con estetica moderna',
+        title: 'LLavero de Triangulo',
+        name: 'LLavero de Triangulo',
       },
     ];
 
-    return of(dataProducts).pipe(delay(1500));
+    return of(dataProducts).pipe(delay(200));
   }
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import File3DModel from '../../../interfaces/File3DModel';
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
+import Color3DModel from '../../../interfaces/Color3DModel';
 
 @Injectable({
   providedIn: 'root',
@@ -34,6 +35,13 @@ export class UploadFilesService {
     this.fileUploadList.splice(index, 1);
     this.fileUploadSubject.next([...this.fileUploadList]);
   }
+
+setColor(index: number, color: Color3DModel): void {
+  if (this.fileUploadList[index]) {
+    this.fileUploadList[index].color = color;
+    this.fileUploadSubject.next([...this.fileUploadList]); // Emitimos la lista actualizada
+  }
+}
 
   // ✅ Método opcional para limpiar la lista
   clearFiles(): void {

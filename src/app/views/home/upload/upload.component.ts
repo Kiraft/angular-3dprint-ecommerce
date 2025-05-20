@@ -30,7 +30,10 @@ export class UploadComponent {
         name: file.name,
         size: file.size,
         file: file,
+        color: {name: "BLANCO", colorCode: "#ffffff"},
+        material: {name: "ABS"},
         quantity: 1,
+        relleno: 20
       };
 
       console.log('Archivo cargado:', event);

@@ -57,8 +57,12 @@ import { PaymentComponent } from './layouts/payment/payment.component';
 import { ConfirmComponent } from './views/cart/confirm/confirm.component';
 import { LoadingOverlayComponent } from './components/loading-overlay/loading-overlay.component';
 import { QuotesComponent } from './views/account/quotes/quotes.component';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgStyle } from '@angular/common';
 import { Preview3DComponent } from './components/preview3-d/preview3-d.component';
+import { ModalColorsComponent } from './components/modals/modal-colors/modal-colors.component';
+import { ButtonColorComponent } from './components/buttons/button-color/button-color.component';
+import { ModalMaterialsComponent } from './components/modals/modal-materials/modal-materials.component';
+import { ButtonsMaterialComponent } from './components/buttons/buttons-material/buttons-material.component';
 
 
 @NgModule({
@@ -108,8 +112,12 @@ import { Preview3DComponent } from './components/preview3-d/preview3-d.component
     LoadingOverlayComponent,
     QuotesComponent,
     Preview3DComponent,
+    ModalColorsComponent,
+    ButtonColorComponent,
+    ModalMaterialsComponent,
+    ButtonsMaterialComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, AsyncPipe],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, AsyncPipe, NgStyle],
   providers: [],
   bootstrap: [AppComponent],
 })

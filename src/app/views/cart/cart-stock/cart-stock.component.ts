@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import File3DModel from '../../../interfaces/File3DModel';
+import { Observable } from 'rxjs';
+import { UploadFilesService } from '../../../shared/services/store/upload-files.service';
 
 @Component({
   selector: 'app-cart-stock',
@@ -7,8 +10,11 @@ import { Router } from '@angular/router';
 })
 export class CartStockComponent {
   loading = false;
+  filesList$: Observable<File3DModel[]>;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private uploadFilesService: UploadFilesService) {
+    this.filesList$ = this.uploadFilesService.getFileUploadList();
+  }
 
   crearCotizacion() {
     this.loading = true;

@@ -3,9 +3,13 @@
 <div class="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
   <!-- Shopping Cart Section -->
   <div class="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
-    <div class="space-y-6">
-      <!-- Card Cart -->
-      <app-card-cart></app-card-cart>
+    <div class="flex flex-col gap-3">
+      @if (filesList$ | async; as files) {
+        @for (item of files; track $index) {
+
+          <app-card-cart [item]="item" [id]="$index"></app-card-cart>
+        }
+      }
     </div>
   </div>
 
@@ -27,7 +31,7 @@
             checked
             class="text-blue-500 bg-gray-800 border-gray-600 focus:ring-blue-500"
           />
-          <span>Persona</span>
+          <span>Estandar</span>
         </label>
         <label class="flex items-center gap-2">
           <input
@@ -36,7 +40,7 @@
             value="empresa"
             class="text-blue-500 bg-gray-800 border-gray-600 focus:ring-blue-500"
           />
-          <span>Empresa</span>
+          <span>Express</span>
         </label>
       </div>
 
@@ -47,7 +51,7 @@
         >
         <select
           id="direccion-guardada"
-          class="w-full px-2 py-1 bg-gray-800 border border-gray-700 rounded text-white text-sm"
+          class="w-full px-2 py-1 bg-white border border-gray-700 rounded text-black text-sm"
         >
           <option>Elige una de tus direcciones guardadas</option>
         </select>
@@ -61,7 +65,7 @@
             type="text"
             id="nombre"
             placeholder="Tu nombre"
-            class="w-full px-2 py-1 bg-gray-800 border border-gray-700 rounded text-white text-sm"
+            class="w-full px-2 py-1 bg-gray-800 border border-gray-700 rounded text-black text-sm"
           />
         </div>
         <div>
@@ -72,7 +76,7 @@
             type="text"
             id="apellido"
             placeholder="Tu apellido"
-            class="w-full px-2 py-1 bg-gray-800 border border-gray-700 rounded text-white text-sm"
+            class="w-full px-2 py-1 bg-white border border-gray-700 rounded text-black text-sm"
           />
         </div>
       </div>
@@ -82,7 +86,7 @@
         <label for="telefono" class="block font-medium mb-1">Teléfono *</label>
         <div class="flex">
           <select
-            class="bg-gray-800 border border-gray-700 rounded-l px-2 py-1 text-white text-sm"
+            class="bg-[#2C2424] border bg-[#2C2424] rounded-l px-2 py-1 text-white text-sm"
           >
             <option>+52</option>
             <option>+1</option>
@@ -99,12 +103,11 @@
 
       <!-- País y Ciudad -->
       <div class="grid grid-cols-2 gap-4 text-sm">
-
         <div>
           <label for="ciudad" class="block font-medium mb-1">Ciudad *</label>
           <select
             id="ciudad"
-            class="w-full px-2 py-1 bg-gray-800 border border-gray-700 rounded text-white text-sm"
+            class="w-full px-2 py-1 bg-[#2C2424] border border-gray-700 rounded text-white text-sm"
           >
             <option>Ciudad de México</option>
             <option>Guadalajara</option>
@@ -137,9 +140,7 @@
         </div>
       </div>
 
-
-
-            <!-- Dirección -->
+      <!-- Dirección -->
       <div class="text-sm">
         <label for="direccion" class="block font-medium mb-1"
           >Dirección *</label
@@ -148,7 +149,7 @@
           id="direccion"
           rows="2"
           placeholder="Calle, número, colonia, etc."
-          class="w-full px-2 py-1 bg-gray-800 border border-gray-700 rounded text-white text-sm"
+          class="w-full px-2 py-1 bg-white border border-gray-700 rounded text-white text-sm"
         ></textarea>
       </div>
 
@@ -172,8 +173,9 @@
       <button
         (click)="crearCotizacion()"
         class="flex w-full bg-[#E7723F] items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-        >Crear cotizacion
-      > </button>
+      >
+        Crear cotizacion >
+      </button>
 
       <div class="flex items-center justify-center gap-2">
         <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
