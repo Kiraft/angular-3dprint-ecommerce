@@ -84,6 +84,7 @@
                 <div class="w-full">
                   <p class="text-left mb-1">Relleno:</p>
                   <button
+                    (click)="showModalRelleno($index)"
 
                     class="w-full text-left rounded-lg border border-black py-1 px-2 font-sans text-xs uppercase text-black"
                     data-ripple-dark="true"
@@ -182,7 +183,7 @@
     <app-modal-materials />
   }
   @case ('relleno') {
-    <!-- <app-modal-relleno /> -->
+    <app-modal-relleno></app-modal-relleno>
   }
 }
 

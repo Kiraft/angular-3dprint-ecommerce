@@ -1,23 +1,23 @@
 import { Component, Input } from '@angular/core';
-import Material3DModel from '../../../interfaces/Material3DModel';
+import Relleno3DModel from '../../../interfaces/Relleno3DModel';
 import { UploadFilesService } from '../../../shared/services/store/upload-files.service';
 import { ModalUploadServiceService } from '../../../shared/services/store/modal-upload-service.service';
 
 @Component({
-  selector: 'app-buttons-material',
-  templateUrl: './buttons-material.component.html',
-  styleUrl: './buttons-material.component.css'
+  selector: 'app-button-rellenos',
+  templateUrl: './button-rellenos.component.html',
+  styleUrl: './button-rellenos.component.css'
 })
-export class ButtonsMaterialComponent {
+export class ButtonRellenosComponent {
   constructor(private uploadFilesService: UploadFilesService, private ModalUploadServiceService: ModalUploadServiceService) {
 
   }
 
-  @Input() material!: Material3DModel;
+  @Input() rellenos!: Relleno3DModel;
 
 
   updateColor() {
-    this.uploadFilesService.setMaterial(this.ModalUploadServiceService.getIdValue(), this.material);
+    this.uploadFilesService.setRelleno(this.ModalUploadServiceService.getIdValue(), this.rellenos);
     this.ModalUploadServiceService.closeModal()
   }
 }

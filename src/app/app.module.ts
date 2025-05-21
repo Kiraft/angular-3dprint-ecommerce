@@ -64,6 +64,8 @@ import { ButtonColorComponent } from './components/buttons/button-color/button-c
 import { ModalMaterialsComponent } from './components/modals/modal-materials/modal-materials.component';
 import { ButtonsMaterialComponent } from './components/buttons/buttons-material/buttons-material.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ModalRellenoComponent } from './components/modals/modal-relleno/modal-relleno.component';
+import { ButtonRellenosComponent } from './components/buttons/button-rellenos/button-rellenos.component';
 
 
 @NgModule({
@@ -116,7 +118,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ModalColorsComponent,
     ButtonColorComponent,
     ModalMaterialsComponent,
-    ButtonsMaterialComponent
+    ButtonsMaterialComponent,
+    ModalRellenoComponent,
+    ButtonRellenosComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, AsyncPipe, NgStyle, HttpClientModule],
   providers: [],

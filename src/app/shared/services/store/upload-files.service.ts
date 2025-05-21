@@ -3,6 +3,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import File3DModel from '../../../interfaces/File3DModel';
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
 import Color3DModel from '../../../interfaces/Color3DModel';
+import Material3DModel from '../../../interfaces/Material3DModel';
+import Relleno3DModel from '../../../interfaces/Relleno3DModel';
 
 @Injectable({
   providedIn: 'root',
@@ -39,6 +41,20 @@ export class UploadFilesService {
 setColor(index: number, color: Color3DModel): void {
   if (this.fileUploadList[index]) {
     this.fileUploadList[index].color = color;
+    this.fileUploadSubject.next([...this.fileUploadList]); // Emitimos la lista actualizada
+  }
+}
+
+setMaterial(index: number, m: Material3DModel): void {
+  if (this.fileUploadList[index]) {
+    this.fileUploadList[index].material = m;
+    this.fileUploadSubject.next([...this.fileUploadList]); // Emitimos la lista actualizada
+  }
+}
+
+setRelleno(index: number, r: Relleno3DModel): void {
+  if (this.fileUploadList[index]) {
+    this.fileUploadList[index].relleno = r.porcentaje;
     this.fileUploadSubject.next([...this.fileUploadList]); // Emitimos la lista actualizada
   }
 }
