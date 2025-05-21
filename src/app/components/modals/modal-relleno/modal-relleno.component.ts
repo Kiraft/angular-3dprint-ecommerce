@@ -1,8 +1,8 @@
-import { RellenoserviceService } from './../../../shared/services/rellenoservice.service';
+import { RellenoserviceService } from '../../../feature/ecommerce/services/rellenoservice.service';
 import { Component } from '@angular/core';
-import Relleno3DModel from '../../../interfaces/Relleno3DModel';
+import Relleno3DModel from '../../../feature/ecommerce/interfaces/Relleno3DModel';
 import { Observable } from 'rxjs';
-import { ModalUploadServiceService } from '../../../shared/services/store/modal-upload-service.service';
+import { ModalUploadServiceService } from '../../../feature/ecommerce/store/modal-upload-service.service';
 
 @Component({
   selector: 'app-modal-relleno',

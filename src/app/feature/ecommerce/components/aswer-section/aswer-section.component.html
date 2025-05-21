@@ -1,0 +1,28 @@
+<section class="text-center mb-24 px-72 flex bg-white w-full">
+  <!-- Procesos -->
+  <div class="flex-1 flex-wrap justify-center p-4 m-2 gap-6">
+    <h1 class="text-2xl font-bold mb-4">Como trabajan?</h1>
+    <!-- Cada paso del proceso -->
+    <video autoplay muted loop playsinline width="600">
+      <source src="../../../../../assets/videos/herosong.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <div class="text-center p-4 m- flex-1">
+    <h1 class="text-2xl font-bold mb-4">Precio en linea, al instante</h1>
+    @for (item of faqs; track $index) {
+    <div class="flex justify-between items-center">
+      <p>{{ item.question }}</p>
+      <button (click)="toggleAnswer(item.id)">
+        <i [ngClass]="item.open ? 'fas fa-minus text-3xl': 'fas fa-plus-circle text-3xl'" style="color: #e66b19"></i>
+      </button>
+
+    </div>
+    <div class="w-full border-t border-gray-300 mb-4 mt-1"></div>
+    @if (item.open) {
+    <div class="text-left text-sm mt-2">
+      <p>{{ item.answer }}</p>
+    </div>
+    } }
+  </div>
+</section>

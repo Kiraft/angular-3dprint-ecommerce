@@ -1,7 +1,7 @@
-import { ModalUploadServiceService } from './../../../shared/services/store/modal-upload-service.service';
+import { ModalUploadServiceService } from '../../../feature/ecommerce/store/modal-upload-service.service';
 import { Observable } from 'rxjs';
-import Color3DModel from '../../../interfaces/Color3DModel';
-import { ColorsServicesService } from './../../../shared/services/colors-services.service';
+import Color3DModel from '../../../feature/ecommerce/interfaces/Color3DModel';
+import { ColorsServicesService } from '../../../feature/ecommerce/services/colors-services.service';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
@@ -11,7 +11,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ModalColorsComponent {
 
   colors!: Observable<Color3DModel[]>;
-  
+
   constructor(private colorsServicesService: ColorsServicesService,
     private modalUploadServiceService: ModalUploadServiceService){
     this.colors = this.colorsServicesService.getColors();

@@ -2,25 +2,25 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 // layouts
 
-import { AuthComponent } from './layouts/auth/auth.component';
+import { AuthComponent } from './feature/auth/layouts/auth/auth.component';
 
 // auth views
-import { LoginComponent } from './views/auth/login/login.component';
-import { RegisterComponent } from './views/auth/register/register.component';
+import { LoginComponent } from './feature/auth/views/auth/login/login.component';
+import { RegisterComponent } from './feature/auth/views/auth/register/register.component';
 
 // no layouts
-import { HomeComponent } from './layouts/home/home.component';
-import { StockComponent } from './views/home/stock/stock.component';
-import { UploadComponent } from './views/home/upload/upload.component';
-import { LandingComponent } from './views/home/landing/landing.component';
-import { AccountComponent } from './layouts/account/account.component';
-import { ProfileComponent } from './views/account/profile/profile.component';
-import { ShippingComponent } from './views/account/shipping/shipping.component';
-import { CartSummaryComponent } from './layouts/cart-summary/cart-summary.component';
-import { CartStockComponent } from './views/cart/cart-stock/cart-stock.component';
-import { PaymentComponent } from './layouts/payment/payment.component';
-import { ConfirmComponent } from './views/cart/confirm/confirm.component';
-import { QuotesComponent } from './views/account/quotes/quotes.component';
+import { HomeComponent } from './feature/ecommerce/layouts/home/home.component';
+import { StockComponent } from './feature/ecommerce/views/home/stock/stock.component';
+import { UploadComponent } from './feature/ecommerce/views/home/upload/upload.component';
+import { LandingComponent } from './feature/ecommerce/views/home/landing/landing.component';
+import { AccountComponent } from './feature/account/layout/account/account.component';
+import { ProfileComponent } from './feature/account/views/account/profile/profile.component';
+import { ShippingComponent } from './feature/account/views/account/shipping/shipping.component';
+import { CartSummaryComponent } from './feature/ecommerce/layouts/cart-summary/cart-summary.component';
+import { CartStockComponent } from './feature/ecommerce/views/cart/cart-stock/cart-stock.component';
+import { PaymentComponent } from './feature/payment/payment/payment.component';
+import { ConfirmComponent } from './feature/ecommerce/views/cart/confirm/confirm.component';
+import { QuotesComponent } from './feature/account/views/account/quotes/quotes.component';
 
 const routes: Routes = [
   // auth views

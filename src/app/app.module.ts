@@ -5,13 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // layouts
-import { AuthComponent } from './layouts/auth/auth.component';
+import { AuthComponent } from './feature/auth/layouts/auth/auth.component';
 
 // admin views
 
 // auth views
-import { LoginComponent } from './views/auth/login/login.component';
-import { RegisterComponent } from './views/auth/register/register.component';
+import { LoginComponent } from './feature/auth/views/auth/login/login.component';
+import { RegisterComponent } from './feature/auth/views/auth/register/register.component';
 
 // no layouts views
 
@@ -37,35 +37,35 @@ import { PagesDropdownComponent } from './components/dropdowns/pages-dropdown/pa
 import { NotificationDropdownComponent } from './components/dropdowns/notification-dropdown/notification-dropdown.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { UserDropdownComponent } from './components/dropdowns/user-dropdown/user-dropdown.component';
-import { StockComponent } from './views/home/stock/stock.component';
-import { UploadComponent } from './views/home/upload/upload.component';
-import { HomeComponent } from './layouts/home/home.component';
-import { LandingComponent } from './views/home/landing/landing.component';
-import { CardsProductComponent } from './components/cards/cards-product/cards-product.component';
-import { TableUploadComponent } from './components/tables/table-upload/table-upload.component';
-import { AswerSectionComponent } from './components/aswer-section/aswer-section.component';
-import { AccountComponent } from './layouts/account/account.component';
-import { SidebarAccountComponent } from './components/sidebar-account/sidebar-account.component';
-import { ProfileComponent } from './views/account/profile/profile.component';
-import { ShippingComponent } from './views/account/shipping/shipping.component';
+import { StockComponent } from './feature/ecommerce/views/home/stock/stock.component';
+import { UploadComponent } from './feature/ecommerce/views/home/upload/upload.component';
+import { HomeComponent } from './feature/ecommerce/layouts/home/home.component';
+import { LandingComponent } from './feature/ecommerce/views/home/landing/landing.component';
+import { CardsProductComponent } from './feature/ecommerce/components/cards-product/cards-product.component';
+import { TableUploadComponent } from './feature/ecommerce/components/table-upload/table-upload.component';
+import { AswerSectionComponent } from './feature/ecommerce/components/aswer-section/aswer-section.component';
+import { AccountComponent } from './feature/account/layout/account/account.component';
+import { SidebarAccountComponent } from './feature/account/components/sidebar-account/sidebar-account.component';
+import { ProfileComponent } from './feature/account/views/account/profile/profile.component';
+import { ShippingComponent } from './feature/account/views/account/shipping/shipping.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CartSummaryComponent } from './layouts/cart-summary/cart-summary.component';
+import { CartSummaryComponent } from './feature/ecommerce/layouts/cart-summary/cart-summary.component';
 import { GlobalNavbarComponent } from './components/navbars/global-navbar/global-navbar.component';
-import { CardCartComponent } from './components/cards/card-cart/card-cart.component';
-import { CartStockComponent } from './views/cart/cart-stock/cart-stock.component';
-import { PaymentComponent } from './layouts/payment/payment.component';
-import { ConfirmComponent } from './views/cart/confirm/confirm.component';
-import { LoadingOverlayComponent } from './components/loading-overlay/loading-overlay.component';
-import { QuotesComponent } from './views/account/quotes/quotes.component';
+import { CardCartComponent } from './feature/ecommerce/components/card-cart/card-cart.component';
+import { CartStockComponent } from './feature/ecommerce/views/cart/cart-stock/cart-stock.component';
+import { PaymentComponent } from './feature/payment/payment/payment.component';
+import { ConfirmComponent } from './feature/ecommerce/views/cart/confirm/confirm.component';
+import { LoadingOverlayComponent } from './feature/ecommerce/components/loading-overlay/loading-overlay.component';
+import { QuotesComponent } from './feature/account/views/account/quotes/quotes.component';
 import { AsyncPipe, NgStyle } from '@angular/common';
-import { Preview3DComponent } from './components/preview3-d/preview3-d.component';
+import { Preview3DComponent } from './feature/ecommerce/components/preview3-d/preview3-d.component';
 import { ModalColorsComponent } from './components/modals/modal-colors/modal-colors.component';
-import { ButtonColorComponent } from './components/buttons/button-color/button-color.component';
+import { ButtonColorComponent } from './feature/ecommerce/components/button-color/button-color.component';
 import { ModalMaterialsComponent } from './components/modals/modal-materials/modal-materials.component';
-import { ButtonsMaterialComponent } from './components/buttons/buttons-material/buttons-material.component';
+import { ButtonsMaterialComponent } from './feature/ecommerce/components/buttons-material/buttons-material.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ModalRellenoComponent } from './components/modals/modal-relleno/modal-relleno.component';
-import { ButtonRellenosComponent } from './components/buttons/button-rellenos/button-rellenos.component';
+import { ButtonRellenosComponent } from './feature/ecommerce/components/button-rellenos/button-rellenos.component';
 
 
 @NgModule({

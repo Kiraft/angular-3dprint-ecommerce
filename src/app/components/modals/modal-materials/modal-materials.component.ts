@@ -1,8 +1,8 @@
-import { MaterialService } from './../../../shared/services/material.service';
+import { MaterialService } from '../../../feature/ecommerce/services/material.service';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import Material3DModel from '../../../interfaces/Material3DModel';
-import { ModalUploadServiceService } from '../../../shared/services/store/modal-upload-service.service';
+import Material3DModel from '../../../feature/ecommerce/interfaces/Material3DModel';
+import { ModalUploadServiceService } from '../../../feature/ecommerce/store/modal-upload-service.service';
 
 @Component({
   selector: 'app-modal-materials',
