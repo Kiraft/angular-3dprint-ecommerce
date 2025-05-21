@@ -1,5 +1,5 @@
 <div
-  class="rounded-lg border border-gray-200 bg-[#E6E6E6] px-4 py-28 shadow-sm  md:p-6"
+  class="rounded-lg border border-gray-200 bg-[#E6E6E6] px-4 py-28 shadow-sm md:p-6"
 >
   <div
     class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0"
@@ -16,7 +16,10 @@
         alt="imac image"
       />
     </a> -->
-    <app-preview3-d [file]="item.file" />
+    <div class="border-2 border-black rounded-lg ">
+
+      <app-preview3-d [file]="item.file" />
+    </div>
 
     <label for="counter-input" class="sr-only">Choose quantity:</label>
     <div class="flex items-center justify-between md:order-3 md:justify-end">
@@ -50,7 +53,7 @@
           data-input-counter
           class="w-10 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 dark:text-white"
           placeholder=""
-          value="{{item.quantity}}"
+          value="{{ item.quantity }}"
           required
         />
         <button
@@ -78,19 +81,22 @@
         </button>
       </div>
       <div class="text-end md:order-4 md:w-32">
-        <p class="text-base font-bold text-gray-900 dark:text-white">$1,499</p>
+        <p class="text-base font-bold text-gray-900 dark:text-white">
+          Por determinar
+        </p>
       </div>
     </div>
 
     <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
       <a
         href="#"
-        class="text-base font-medium text-gray-900 hover:underline dark:text-white"
-        >{{item.name}}</a
+        class="text-xl font-medium text-gray-900 hover:underline dark:text-white"
+        >{{ item.name }}</a
       >
 
-      <div class="flex items-center gap-4">
-        <button
+      <div class="flex items-center gap-2">
+        <!-- Boton favoritos -->
+        <!-- <button
           type="button"
           class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 hover:underline dark:text-gray-400 dark:hover:text-white"
         >
@@ -112,7 +118,37 @@
             />
           </svg>
           Editar
-        </button>
+        </button> -->
+        <div class="w-full max-w-20">
+          <button
+            (click)="showModalColor(id)"
+            class="w-full px-2 text-left rounded-lg border border-black py-1 font-sans text-xs uppercase text-black"
+            data-ripple-dark="true"
+          >
+            {{item.color?.name}}
+          </button>
+        </div>
+
+        <div class="w-full max-w-10">
+          <button
+            (click)="showModalMaterial(id)"
+            class="w-full px-2 text-left rounded-lg border border-black py-1 font-sans text-xs uppercase text-black"
+            data-ripple-dark="true"
+          >
+            {{item.material?.name}}
+
+          </button>
+        </div>
+        <div class="w-full max-w-12">
+          <button
+            (click)="showModalRelleno(id)"
+            class="w-full px-2 text-left rounded-lg border border-black py-1 font-sans text-xs uppercase text-black"
+            data-ripple-dark="true"
+          >
+            {{item.relleno}}
+
+          </button>
+        </div>
 
         <button
           (click)="eliminarItem(id)"

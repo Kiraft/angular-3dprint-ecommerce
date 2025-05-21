@@ -9,36 +9,35 @@ import { Observable } from 'rxjs';
   templateUrl: './table-upload.component.html',
 })
 export class TableUploadComponent {
-
   @Input() fileModelsTranfer!: File3DModel[];
   modalType$ = this.modalUploadServiceService.getModalType();
 
-  constructor(private uploadFilesService: UploadFilesService
-    , private modalUploadServiceService: ModalUploadServiceService) {
+  constructor(
+    private uploadFilesService: UploadFilesService,
+    private modalUploadServiceService: ModalUploadServiceService
+  ) {}
 
-  }
-
-  addCounter(i: number): void{
-    this.uploadFilesService.incrementQuantity(i)
+  addCounter(i: number): void {
+    this.uploadFilesService.incrementQuantity(i);
   }
 
   resCounter(i: number): void {
-    this.uploadFilesService.decrementQuantity(i)
+    this.uploadFilesService.decrementQuantity(i);
   }
 
-  deleteItemTable(i: number){
+  deleteItemTable(i: number) {
     this.uploadFilesService.removeFile(i);
   }
 
-showModalColor(id: number) {
-  this.modalUploadServiceService.openModal('color', id);
-}
+  showModalColor(id: number) {
+    this.modalUploadServiceService.openModal('color', id);
+  }
 
-showModalMaterial(id: number) {
-  this.modalUploadServiceService.openModal('material', id);
-}
+  showModalMaterial(id: number) {
+    this.modalUploadServiceService.openModal('material', id);
+  }
 
-showModalRelleno(id: number) {
-  this.modalUploadServiceService.openModal('relleno', id);
-}
+  showModalRelleno(id: number) {
+    this.modalUploadServiceService.openModal('relleno', id);
+  }
 }

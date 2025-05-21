@@ -38,26 +38,26 @@ export class UploadFilesService {
     this.fileUploadSubject.next([...this.fileUploadList]);
   }
 
-setColor(index: number, color: Color3DModel): void {
-  if (this.fileUploadList[index]) {
-    this.fileUploadList[index].color = color;
-    this.fileUploadSubject.next([...this.fileUploadList]); // Emitimos la lista actualizada
+  setColor(index: number, color: Color3DModel): void {
+    if (this.fileUploadList[index]) {
+      this.fileUploadList[index].color = color;
+      this.fileUploadSubject.next([...this.fileUploadList]); // Emitimos la lista actualizada
+    }
   }
-}
 
-setMaterial(index: number, m: Material3DModel): void {
-  if (this.fileUploadList[index]) {
-    this.fileUploadList[index].material = m;
-    this.fileUploadSubject.next([...this.fileUploadList]); // Emitimos la lista actualizada
+  setMaterial(index: number, m: Material3DModel): void {
+    if (this.fileUploadList[index]) {
+      this.fileUploadList[index].material = m;
+      this.fileUploadSubject.next([...this.fileUploadList]); // Emitimos la lista actualizada
+    }
   }
-}
 
-setRelleno(index: number, r: Relleno3DModel): void {
-  if (this.fileUploadList[index]) {
-    this.fileUploadList[index].relleno = r.porcentaje;
-    this.fileUploadSubject.next([...this.fileUploadList]); // Emitimos la lista actualizada
+  setRelleno(index: number, r: Relleno3DModel): void {
+    if (this.fileUploadList[index]) {
+      this.fileUploadList[index].relleno = r.porcentaje;
+      this.fileUploadSubject.next([...this.fileUploadList]); // Emitimos la lista actualizada
+    }
   }
-}
 
   // ✅ Método opcional para limpiar la lista
   clearFiles(): void {
@@ -101,5 +101,9 @@ setRelleno(index: number, r: Relleno3DModel): void {
       this.fileUploadList[index].quantity = current > 1 ? current - 1 : 1;
       this.fileUploadSubject.next([...this.fileUploadList]);
     }
+  }
+
+  isEmpty(): boolean {
+    return this.fileUploadList.length == 0;
   }
 }
