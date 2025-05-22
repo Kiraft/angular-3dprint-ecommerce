@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
 
-export type ModalType = 'color' | 'material' | 'relleno' | null;
+export type ModalType = 'color' | 'material' | 'relleno' | 'precios'| null;
 
 @Injectable({
   providedIn: 'root',
@@ -22,10 +22,12 @@ export class ModalUploadServiceService {
     return this.idSubject.value;
   }
 
-  openModal(type: ModalType, id: number): void {
-    this.modalTypeSubject.next(type);
+openModal(type: ModalType, id?: number): void {
+  this.modalTypeSubject.next(type);
+  if (id !== undefined) {
     this.idSubject.next(id);
   }
+}
 
   closeModal(): void {
     this.modalTypeSubject.next(null);

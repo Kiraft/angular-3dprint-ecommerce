@@ -66,6 +66,7 @@ import { ButtonsMaterialComponent } from './feature/ecommerce/components/buttons
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ModalRellenoComponent } from './components/modals/modal-relleno/modal-relleno.component';
 import { ButtonRellenosComponent } from './feature/ecommerce/components/button-rellenos/button-rellenos.component';
+import { ModalPreciosComponent } from './components/modals/modal-precios/modal-precios.component';
 
 
 @NgModule({
@@ -120,7 +121,8 @@ import { ButtonRellenosComponent } from './feature/ecommerce/components/button-r
     ModalMaterialsComponent,
     ButtonsMaterialComponent,
     ModalRellenoComponent,
-    ButtonRellenosComponent
+    ButtonRellenosComponent,
+    ModalPreciosComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, AsyncPipe, NgStyle, HttpClientModule],
   providers: [],

@@ -11,7 +11,11 @@
     />
 
     <div class="flex-1 flex items-center justify-center">
-      <img src="../../../../../../assets/img/dragimage.png" alt="" class="max-w-[450px] h-auto" />
+      <img
+        src="../../../../../../assets/img/dragimage.png"
+        alt=""
+        class="max-w-[450px] h-auto"
+      />
     </div>
 
     <div class="flex-1 flex gap-6 flex-col items-center justify-center">
@@ -44,54 +48,56 @@
   </div>
 </section>
 
-@if (filesList$  | async; as resultObjets) {
+@if (filesList$ | async; as resultObjets) { @if (resultObjets.length != 0) {
 
-  @if (resultObjets.length != 0) {
+<app-table-upload [fileModelsTranfer]="resultObjets"></app-table-upload>
 
-    <app-table-upload [fileModelsTranfer]="resultObjets"></app-table-upload>
+<section class="mt-4 mb-10 px-96 flex flex-col flex-wrap bg-white w-full">
+  <div class="flex w-auto h-[300px]">
+    <div class="flex-1 flex items-center justify-center"></div>
 
-    <section class="mt-4 mb-10 px-96 flex flex-col flex-wrap bg-white w-full">
-      <div class="flex w-auto h-[300px]">
-        <div class="flex-1 flex items-center justify-center"></div>
-
-        <div class="flex-1 flex gap-3 flex-col items-center justify-center">
-          <h1 class="text-2xl font-bold mb- self-start">Resumen</h1>
-          <div
-            class="flex justify-between w-full border-[1px] border-black px-2 py-2"
-          >
-            <div>Estimacion de salida de planta</div>
-            <div>
-              <p class="font-bold">Por determinar</p>
-            </div>
-          </div>
-
-          <div
-            class="flex justify-between w-full border-[1px] border-black px-2 py-2"
-          >
-            <div>Total</div>
-            <div class="flex gap-1">
-              <p class="font-bold">Por determinar</p>
-              <span class="font-sans">(incl. IVA)</span>
-            </div>
-          </div>
-
-          <div class="flex flex-col items-center justify-center w-[400px]">
-            <button
-              routerLink="/cart/summary"
-              class="w-full middle none center mr-4 rounded-lg bg-orange-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-              data-ripple-light="true"
-            >
-              <span class="text-base">AGREGAR A CARRITO</span>
-            </button>
-          </div>
+    <div class="flex-1 flex gap-3 flex-col items-center justify-center">
+      <h1 class="text-2xl font-bold mb- self-start">Resumen</h1>
+      <div
+        class="flex justify-between w-full border-[1px] border-black px-2 py-2"
+      >
+        <div>Descuentos por numero</div>
+        <button (click)="showModalPrecios()">
+          <p class="font-bold underline text-orange-500">Ver descuentos</p>
+        </button>
+      </div>
+      <div
+        class="flex justify-between w-full border-[1px] border-black px-2 py-2"
+      >
+        <div>Estimacion de salida de planta</div>
+        <div>
+          <p class="font-bold">Por determinar</p>
         </div>
       </div>
-    </section>
-  }
 
-}
+      <div
+        class="flex justify-between w-full border-[1px] border-black px-2 py-2"
+      >
+        <div>Total</div>
+        <div class="flex gap-1">
+          <p class="font-bold">Por determinar</p>
+          <span class="font-sans">(incl. IVA)</span>
+        </div>
+      </div>
 
+      <div class="flex flex-col items-center justify-center w-[400px]">
+        <button
+          routerLink="/cart/summary"
+          class="w-full middle none center mr-4 rounded-lg bg-orange-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          data-ripple-light="true"
+        >
+          <span class="text-base">AGREGAR A CARRITO</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+} }
 
 <app-aswer-section></app-aswer-section>
 
-<!-- <app-modal-colors [show]="true" [id]="1"/> -->

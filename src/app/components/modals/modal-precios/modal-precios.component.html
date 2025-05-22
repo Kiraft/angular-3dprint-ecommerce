@@ -1,0 +1,70 @@
+<!-- Modal Container -->
+<div
+  class="fixed left-0 top-0 flex h-full w-full items-center justify-center bg-black bg-opacity-50 py-10"
+>
+  <div
+    class="max-h-full w-full max-w-2xl overflow-y-auto sm:rounded-2xl bg-white"
+  >
+    <div class="w-full px-24">
+      <div class="m-8 my-20 mx-auto">
+        <!-- Eliminamos max-w-[600px] -->
+        <!-- Header Modal -->
+        <div>
+          <div class="mb-1 flex justify-between items-center">
+            <h1 class="text-xl font-extrabold">Descuentos</h1>
+            <button (click)="closeModal()">
+              <i
+                class="fas fa-times text-4xl cursor-pointer"
+                style="color: #d11515"
+              ></i>
+            </button>
+          </div>
+          <p>
+            Entre mas piezas adquieras puedes obtener un descuento en tu
+            cotizacion
+          </p>
+        </div>
+        <hr class="my-4" />
+        <!-- Item Colors -->
+        <div class="flex flex-wrap gap-4 justify-center">
+          <!-- component -->
+          <div class="bg-white">
+            <div class="overflow-x-auto border-x border-t">
+              <table class="table-auto w-full">
+                <thead class="border-b">
+                  <tr class="bg-gray-100">
+                    <th class="text-left p-4 font-medium">Piezas</th>
+                    <th class="text-left p-4 font-medium">Descuento</th>
+                    <th class="p-4 font-medium text-center">Envio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b hover:bg-gray-50 text-center">
+                    <td class="p-4">25</td>
+                    <td class="p-4">5</td>
+                    <td class="p-4">Bajo cotizacion</td>
+                  </tr>
+                  <tr class="border-b hover:bg-gray-50 text-center">
+                    <td class="p-4">50</td>
+                    <td class="p-4">8</td>
+                    <td class="p-4">Bajo cotizacion</td>
+                  </tr>
+                  <tr class="border-b hover:bg-gray-50 text-center">
+                    <td class="p-4">100</td>
+                    <td class="p-4">10</td>
+                    <td class="p-4">Estandar Gratis</td>
+                  </tr>
+                  <tr class="border-b hover:bg-gray-50 text-center">
+                    <td class="p-4">200</td>
+                    <td class="p-4">10</td>
+                    <td class="p-4">Estandar Gratis</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
