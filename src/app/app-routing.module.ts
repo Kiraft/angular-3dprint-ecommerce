@@ -21,6 +21,8 @@ import { CartStockComponent } from './feature/ecommerce/views/cart/cart-stock/ca
 import { PaymentComponent } from './feature/payment/payment/payment.component';
 import { ConfirmComponent } from './feature/ecommerce/views/cart/confirm/confirm.component';
 import { QuotesComponent } from './feature/account/views/account/quotes/quotes.component';
+import { AddressComponent } from './feature/account/views/account/address/address.component';
+import { DetaillsComponent } from './feature/account/components/detaills/detaills.component';
 
 const routes: Routes = [
   // auth views
@@ -38,9 +40,10 @@ const routes: Routes = [
     component: AccountComponent,
     children: [
       { path: 'profile', component: ProfileComponent },
-      { path: 'address', component: RegisterComponent },
+      { path: 'address', component: AddressComponent },
       { path: 'shipping', component: ShippingComponent },
       { path: 'quotes', component: QuotesComponent },
+      { path: 'quotes/details', component: DetaillsComponent},
 
       { path: '', redirectTo: 'profile', pathMatch: 'full' },
     ],

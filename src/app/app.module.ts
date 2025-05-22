@@ -68,6 +68,7 @@ import { ModalRellenoComponent } from './components/modals/modal-relleno/modal-r
 import { ButtonRellenosComponent } from './feature/ecommerce/components/button-rellenos/button-rellenos.component';
 import { ModalPreciosComponent } from './components/modals/modal-precios/modal-precios.component';
 import { AddressComponent } from './feature/account/views/account/address/address.component';
+import { DetaillsComponent } from './feature/account/components/detaills/detaills.component';
 
 
 @NgModule({
@@ -124,7 +125,8 @@ import { AddressComponent } from './feature/account/views/account/address/addres
     ModalRellenoComponent,
     ButtonRellenosComponent,
     ModalPreciosComponent,
-    AddressComponent
+    AddressComponent,
+    DetaillsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, AsyncPipe, NgStyle, HttpClientModule],
   providers: [],
