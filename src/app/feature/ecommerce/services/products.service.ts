@@ -15,25 +15,45 @@ export class ProductsService {
         img: 'assets/img/products/product2.jpg',
         description: 'Llavero de muy buena forma que mida aproximadamente',
         title: 'LLavero de Cocodrilo',
-        name: "LLavero de Cocodrilo",
-        urlFile: ["assets/localmodels/SquareAnimals/Square_Croco.stl"]
-
+        name: 'LLavero de Cocodrilo',
+        urlFile: [{
+          name:'assets/localmodels/SquareAnimals/Square_Croco.stl' ,
+          url: 'Square_Croco'
+        }],
       },
       {
         img: 'assets/img/productfinal.jpg',
-        description: 'Cascaras especializada para proteger un RasberryPi de forma de caricatura',
+        description:
+          'Cascaras especializada para proteger un RasberryPi de forma de caricatura',
         title: 'Carcasa RasberryPi',
         name: 'Carcasa RasberryPi',
-        urlFile: ["assets/localmodels/rasberri/piplus-top.stl", "assets/localmodels/rasberri/piplus-bottom.stl", "assets/localmodels/rasberri/piplus-teeth.stl"]
-
+        urlFile: [
+          {
+            name: 'piplus-top',
+            url: 'assets/localmodels/rasberri/piplus-top.stl',
+          },
+          {
+            name: 'piplus-bottom',
+            url: 'assets/localmodels/rasberri/piplus-bottom.stl',
+          },
+          {
+            name: 'piplus-teeth',
+            url: 'assets/localmodels/rasberri/piplus-teeth.stl',
+          },
+        ],
       },
       {
         img: 'assets/img/products/product4.jpg',
         description: 'Llavero de forma trigular con estetica moderna',
         title: 'LLavero de Triangulo',
         name: 'LLavero de Triangulo',
-        urlFile: [  "assets/localmodels/amg3D/llavero harry potter triangulo.stl"]
-
+        urlFile: [
+          {
+            name: 'llavero harry potter triangulo',
+            url: 'assets/localmodels/amg3D/llavero harry potter triangulo.stl'
+          }
+          ,
+        ],
       },
     ];
 

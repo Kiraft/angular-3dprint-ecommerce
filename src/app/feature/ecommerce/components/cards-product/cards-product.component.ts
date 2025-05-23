@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
 import File3DModel from '../../interfaces/File3DModel';
 import Swal from 'sweetalert2';
+import { UrlFileModel } from '../../interfaces/Product3DModel';
 
 @Component({
   selector: 'app-cards-product',
@@ -12,7 +13,7 @@ export class CardsProductComponent {
   @Input() img!: string;
   @Input() title!: string;
   @Input() description!: string;
-  @Input() fileModelUrl!: string[];
+  @Input() fileModelUrl!: UrlFileModel[];
 
   constructor(
     private http: HttpClient,
@@ -21,9 +22,9 @@ export class CardsProductComponent {
 
   cargarArchivoLocal(): void {
     this.fileModelUrl.forEach((url) => {
-      this.http.get(url, { responseType: 'blob' }).subscribe((blob) => {
+      this.http.get(url.url, { responseType: 'blob' }).subscribe((blob) => {
         // Crear un objeto tipo File
-        const file = new File([blob], `${this.title}.stl `, {
+        const file = new File([blob], `${url.name}.stl `, {
           type: 'application/sla',
         });
 
