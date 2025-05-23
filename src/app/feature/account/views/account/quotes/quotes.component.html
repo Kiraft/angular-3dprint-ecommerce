@@ -1,57 +1,58 @@
 <section
-  class="bg-[#E6E6E6] py-8 antialiased md:py-16 w-[1000px] border-4 ml-5 mt-5 pr"
+  class="bg-[#E6E6E6] rounded-md py-3 antialiased md:py-16 w-[1050px] border-4 ml-5 mt-5 px-3"
 >
-  <div class="w-full px-4 2xl:px-0">
-    <div class="mx-auto">
-      <div class="gap-4 sm:flex sm:items-center sm:justify-between">
-        <h2 class="text-xl font-semibold text-gray-900 sm:text-2xl">
-          Mis cotizaciones
-        </h2>
+  <div class="gap-4 sm:flex sm:items-center sm:justify-between">
+    <h2 class="text-xl font-semibold text-gray-900 sm:text-2xl">
+      Mis cotizaciones
+    </h2>
 
-        <div
-          class="mt-6 gap-4 space-y-4 sm:mt-0 sm:flex sm:items-center sm:justify-end sm:space-y-0"
+    <div
+      class="mt-6 gap-4 space-y-4 sm:mt-0 sm:flex sm:items-center sm:justify-end sm:space-y-0"
+    >
+      <div>
+        <label
+          for="order-type"
+          class="sr-only mb-2 block text-sm font-medium text-gray-900"
+          >Select order type</label
         >
-          <div>
-            <label
-              for="order-type"
-              class="sr-only mb-2 block text-sm font-medium text-gray-900"
-              >Select order type</label
-            >
-            <select
-              id="order-type"
-              class="block w-full min-w-[8rem] rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
-            >
-              <option selected>All orders</option>
-              <option value="pre-order">Pre-order</option>
-              <option value="transit">In transit</option>
-              <option value="confirmed">Confirmed</option>
-              <option value="cancelled">Cancelled</option>
-            </select>
-          </div>
-
-          <span class="inline-block text-gray-500"> from </span>
-
-          <div>
-            <label
-              for="duration"
-              class="sr-only mb-2 block text-sm font-medium text-gray-900"
-              >Select duration</label
-            >
-            <select
-              id="duration"
-              class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
-            >
-              <option selected>this week</option>
-              <option value="this month">this month</option>
-              <option value="last 3 months">the last 3 months</option>
-              <option value="lats 6 months">the last 6 months</option>
-              <option value="this year">this year</option>
-            </select>
-          </div>
-        </div>
+        <select
+          id="order-type"
+          class="block w-full min-w-[8rem] rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+        >
+          <option selected>All orders</option>
+          <option value="pre-order">Pre-order</option>
+          <option value="transit">In transit</option>
+          <option value="confirmed">Confirmed</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
       </div>
 
-      <div class="mt-6 flow-root sm:mt-8">
+      <span class="inline-block text-gray-500"> from </span>
+
+      <div>
+        <label
+          for="duration"
+          class="sr-only mb-2 block text-sm font-medium text-gray-900"
+          >Select duration</label
+        >
+        <select
+          id="duration"
+          class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+        >
+          <option selected>this week</option>
+          <option value="this month">this month</option>
+          <option value="last 3 months">the last 3 months</option>
+          <option value="lats 6 months">the last 6 months</option>
+          <option value="this year">this year</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bg-[#E6E6E6] rounded-md antialiased w-[1050px] border-4 ml-5 mt-5 pr">
+  <div class="w-full px-4 2xl:px-0">
+    <div class="mx-auto">
+      <div class="mt-1 flow-root sm:mt-8">
         <div class="divide-y divide-gray-200">
           <!-- Pedidos carts -->
           <div class="flex flex-wrap items-center gap-y-4 py-6">

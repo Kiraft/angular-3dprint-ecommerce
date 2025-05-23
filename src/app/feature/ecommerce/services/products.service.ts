@@ -19,7 +19,7 @@ export class ProductsService {
         urlFile: "assets/localmodels/SquareAnimals/Square_Croco.stl"
       },
       {
-        img: 'assets/img/products/product3.jpg',
+        img: 'assets/img/productfinal.jpg',
         description: 'Llavero minimalista de forma circular',
         title: 'LLavero codorniz',
         name: 'LLavero codorniz',
