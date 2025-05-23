@@ -16,21 +16,23 @@ export class ProductsService {
         description: 'Llavero de muy buena forma que mida aproximadamente',
         title: 'LLavero de Cocodrilo',
         name: "LLavero de Cocodrilo",
-        urlFile: "assets/localmodels/SquareAnimals/Square_Croco.stl"
+        urlFile: ["assets/localmodels/SquareAnimals/Square_Croco.stl"]
+
       },
       {
         img: 'assets/img/productfinal.jpg',
-        description: 'Llavero minimalista de forma circular',
-        title: 'LLavero codorniz',
-        name: 'LLavero codorniz',
-        urlFile: "assets/localmodels/amg3D/llavero harry potter triangulo.stl"
+        description: 'Cascaras especializada para proteger un RasberryPi de forma de caricatura',
+        title: 'Carcasa RasberryPi',
+        name: 'Carcasa RasberryPi',
+        urlFile: ["assets/localmodels/rasberri/piplus-top.stl", "assets/localmodels/rasberri/piplus-bottom.stl", "assets/localmodels/rasberri/piplus-teeth.stl"]
+
       },
       {
         img: 'assets/img/products/product4.jpg',
         description: 'Llavero de forma trigular con estetica moderna',
         title: 'LLavero de Triangulo',
         name: 'LLavero de Triangulo',
-        urlFile: "assets/localmodels/amg3D/llavero harry potter triangulo.stl"
+        urlFile: [  "assets/localmodels/amg3D/llavero harry potter triangulo.stl"]
 
       },
     ];

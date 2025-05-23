@@ -12,7 +12,7 @@ export class CardsProductComponent {
   @Input() img!: string;
   @Input() title!: string;
   @Input() description!: string;
-  @Input() fileModelUrl!: string;
+  @Input() fileModelUrl!: string[];
 
   constructor(
     private http: HttpClient,
@@ -20,9 +20,8 @@ export class CardsProductComponent {
   ) {}
 
   cargarArchivoLocal(): void {
-    this.http
-      .get(this.fileModelUrl, { responseType: 'blob' })
-      .subscribe((blob) => {
+    this.fileModelUrl.forEach((url) => {
+      this.http.get(url, { responseType: 'blob' }).subscribe((blob) => {
         // Crear un objeto tipo File
         const file = new File([blob], `${this.title}.stl `, {
           type: 'application/sla',
@@ -48,5 +47,6 @@ export class CardsProductComponent {
           draggable: true,
         });
       });
+    });
   }
 }

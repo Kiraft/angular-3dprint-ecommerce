@@ -7,5 +7,5 @@ export default interface Products3DModel {
   description: string;
   title: string;
   name: string;
-  urlFile: string;
+  urlFile: string[];
 }
