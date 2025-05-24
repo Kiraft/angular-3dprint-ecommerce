@@ -70,6 +70,8 @@ import { ModalPreciosComponent } from './components/modals/modal-precios/modal-p
 import { AddressComponent } from './feature/account/views/account/address/address.component';
 import { DetaillsComponent } from './feature/account/components/detaills/detaills.component';
 import { ModalCodeQuoteComponent } from './feature/account/components/modal-code-quote/modal-code-quote.component';
+import { OptionsQuoteComponent } from './feature/account/components/options-quote/options-quote.component';
+import { TrackingQuoteComponent } from './feature/account/components/tracking-quote/tracking-quote.component';
 
 
 @NgModule({
@@ -128,7 +130,9 @@ import { ModalCodeQuoteComponent } from './feature/account/components/modal-code
     ModalPreciosComponent,
     AddressComponent,
     DetaillsComponent,
-    ModalCodeQuoteComponent
+    ModalCodeQuoteComponent,
+    OptionsQuoteComponent,
+    TrackingQuoteComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, AsyncPipe, NgStyle, HttpClientModule],
   providers: [],
