@@ -48,7 +48,7 @@ export class UploadComponent {
   }
 
   cargarArchivoTest(): void {
-    this.HttpClient.get('assets/localmodels/jinshi.stl', {
+    this.HttpClient.get('assets/localmodels/PlanetarygearCuisinart.stl', {
       responseType: 'blob',
     }).subscribe((blob) => {
       // Crear un objeto tipo File
