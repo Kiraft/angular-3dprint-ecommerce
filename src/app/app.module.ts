@@ -72,6 +72,7 @@ import { DetaillsComponent } from './feature/account/components/detaills/detaill
 import { ModalCodeQuoteComponent } from './feature/account/components/modal-code-quote/modal-code-quote.component';
 import { OptionsQuoteComponent } from './feature/account/components/options-quote/options-quote.component';
 import { TrackingQuoteComponent } from './feature/account/components/tracking-quote/tracking-quote.component';
+import { CardQuoteComponent } from './feature/account/components/card-quote/card-quote.component';
 
 
 @NgModule({
@@ -132,7 +133,8 @@ import { TrackingQuoteComponent } from './feature/account/components/tracking-qu
     DetaillsComponent,
     ModalCodeQuoteComponent,
     OptionsQuoteComponent,
-    TrackingQuoteComponent
+    TrackingQuoteComponent,
+    CardQuoteComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, AsyncPipe, NgStyle, HttpClientModule],
   providers: [],

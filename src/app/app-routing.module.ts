@@ -43,7 +43,7 @@ const routes: Routes = [
       { path: 'address', component: AddressComponent },
       { path: 'shipping', component: ShippingComponent },
       { path: 'quotes', component: QuotesComponent },
-      { path: 'quotes/details', component: DetaillsComponent},
+      { path: 'quotes/:id/details', component: DetaillsComponent},
 
       { path: '', redirectTo: 'profile', pathMatch: 'full' },
     ],
