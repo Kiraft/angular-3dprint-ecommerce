@@ -40,6 +40,7 @@ export class UploadComponent {
         material: { name: 'ABS' },
         quantity: 1,
         relleno: 20,
+        isTest: false
       };
 
       console.log('Archivo cargado:', event);
@@ -63,6 +64,7 @@ export class UploadComponent {
         material: { name: 'ABS' },
         quantity: 1,
         relleno: 20,
+        isTest: true
       };
 
       console.log('Archivo STL cargado desde assets:', fileData);

@@ -37,6 +37,7 @@ export class CardsProductComponent {
           material: { name: 'ABS' },
           quantity: 1,
           relleno: 20,
+          isTest: false
         };
 
         console.log('Archivo STL cargado desde assets:', fileData);

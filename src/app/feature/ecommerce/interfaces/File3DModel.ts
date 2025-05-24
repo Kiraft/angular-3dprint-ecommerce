@@ -10,5 +10,6 @@ export default interface File3DModel {
   quantity: number,
   color?: Color3DModel,
   material?: Material3DModel,
-  relleno?: number
+  relleno?: number,
+  isTest: boolean
 }
