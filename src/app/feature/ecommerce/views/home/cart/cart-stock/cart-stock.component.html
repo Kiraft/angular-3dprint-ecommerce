@@ -60,7 +60,7 @@
         >
           <option value="-1" disabled selected>Direcciones guardadas</option>
           @for (item of savedAddresses; track $index) {
-            <option [value]="$index">{{ item.name }}</option>
+          <option [value]="$index">{{ item.name }}</option>
           }
         </select>
       </div>
@@ -114,16 +114,6 @@
       </div>
 
       <!-- País y Ciudad -->
-      <select
-        id="ciudad"
-        formControlName="city"
-        class="w-full px-2 py-1 bg-[#E7723F] border border-gray-700 rounded text-white text-sm"
-      >
-        <option value="">Selecciona una ciudad</option>
-        <option value="Ciudad de México">Ciudad de México</option>
-        <option value="Guadalajara">Guadalajara</option>
-        <option value="Monterrey">Monterrey</option>
-      </select>
 
       <!-- Código Postal y Colonia -->
       <div class="grid grid-cols-2 gap-4 text-sm">
@@ -153,6 +143,16 @@
         </div>
       </div>
 
+      <select
+        id="ciudad"
+        formControlName="city"
+        class="w-full px-2 py-1 bg-[#E7723F] border border-gray-700 rounded text-white text-sm"
+      >
+        <option value="">Selecciona una ciudad</option>
+        <option value="Ciudad de México">Ciudad de México</option>
+        <option value="Guadalajara">Guadalajara</option>
+        <option value="Monterrey">Monterrey</option>
+      </select>
       <!-- Dirección -->
       <div class="text-sm">
         <label for="direccion" class="block font-medium mb-1"

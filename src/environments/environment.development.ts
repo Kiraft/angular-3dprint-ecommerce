@@ -2,7 +2,7 @@ import { SupabaseAuthClient } from "@supabase/supabase-js/dist/module/lib/Supaba
 
 export const environment = {
   production: false,
+  STRAPI_TOKEN: "34913eb70ed8d5ae818d33708c5a450e13c7fd3249b69f6809b6360e693ba8c2ad75d7c6d876e6d1990893c78af7ba4165e2811d319cab618ed30e1606fcc97e3d83387137ff6cc77062ee0a9aed9f0044ab4fff332c689a34bfb175cc4d573eee0375c2abf3b764cc6616f89bd39ba541a14a4e5e54f46cc6f658f8a6983cba",
   SUPABASE_URL: "https://llgvdmjohxivqdlethds.supabase.co",
   SUPABASE_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxsZ3ZkbWpvaHhpdnFkbGV0aGRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcxNzI5MTMsImV4cCI6MjA2Mjc0ODkxM30.Uu3g5pUqNIhvVNqXg6a5n0p97Ut4q9rrbbDqAcz8i0k"
-
 };

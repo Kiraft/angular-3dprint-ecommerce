@@ -52,9 +52,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CartSummaryComponent } from './feature/ecommerce/layouts/cart-summary/cart-summary.component';
 import { GlobalNavbarComponent } from './components/navbars/global-navbar/global-navbar.component';
 import { CardCartComponent } from './feature/ecommerce/components/card-cart/card-cart.component';
-import { CartStockComponent } from './feature/ecommerce/views/cart/cart-stock/cart-stock.component';
-import { PaymentComponent } from './feature/payment/payment/payment.component';
-import { ConfirmComponent } from './feature/ecommerce/views/cart/confirm/confirm.component';
+import { CartStockComponent } from './feature/ecommerce/views/home/cart/cart-stock/cart-stock.component';
+import { PaymentComponent } from './feature/account/views/payment/payment.component';
+import { ConfirmComponent } from './feature/ecommerce/views/home/cart/confirm/confirm.component';
 import { LoadingOverlayComponent } from './feature/ecommerce/components/loading-overlay/loading-overlay.component';
 import { QuotesComponent } from './feature/account/views/account/quotes/quotes.component';
 import { AsyncPipe, NgStyle } from '@angular/common';
@@ -69,6 +69,7 @@ import { ButtonRellenosComponent } from './feature/ecommerce/components/button-r
 import { ModalPreciosComponent } from './components/modals/modal-precios/modal-precios.component';
 import { AddressComponent } from './feature/account/views/account/address/address.component';
 import { DetaillsComponent } from './feature/account/components/detaills/detaills.component';
+import { ModalCodeQuoteComponent } from './feature/account/components/modal-code-quote/modal-code-quote.component';
 
 
 @NgModule({
@@ -126,7 +127,8 @@ import { DetaillsComponent } from './feature/account/components/detaills/detaill
     ButtonRellenosComponent,
     ModalPreciosComponent,
     AddressComponent,
-    DetaillsComponent
+    DetaillsComponent,
+    ModalCodeQuoteComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, AsyncPipe, NgStyle, HttpClientModule],
   providers: [],

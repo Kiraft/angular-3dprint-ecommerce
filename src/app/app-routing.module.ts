@@ -17,9 +17,9 @@ import { AccountComponent } from './feature/account/layout/account/account.compo
 import { ProfileComponent } from './feature/account/views/account/profile/profile.component';
 import { ShippingComponent } from './feature/account/views/account/shipping/shipping.component';
 import { CartSummaryComponent } from './feature/ecommerce/layouts/cart-summary/cart-summary.component';
-import { CartStockComponent } from './feature/ecommerce/views/cart/cart-stock/cart-stock.component';
-import { PaymentComponent } from './feature/payment/payment/payment.component';
-import { ConfirmComponent } from './feature/ecommerce/views/cart/confirm/confirm.component';
+import { CartStockComponent } from './feature/ecommerce/views/home/cart/cart-stock/cart-stock.component';
+import { PaymentComponent } from './feature/account/views/payment/payment.component';
+import { ConfirmComponent } from './feature/ecommerce/views/home/cart/confirm/confirm.component';
 import { QuotesComponent } from './feature/account/views/account/quotes/quotes.component';
 import { AddressComponent } from './feature/account/views/account/address/address.component';
 import { DetaillsComponent } from './feature/account/components/detaills/detaills.component';

@@ -1,10 +1,10 @@
-import { UploadFilesService } from '../../../store/upload-files.service';
-import { ModalUploadServiceService } from '../../../store/modal-upload-service.service';
-import { AuthService } from '../../../../auth/services/auth/auth.service';
-import { AuthComponent } from '../../../../auth/layouts/auth/auth.component';
+import { UploadFilesService } from '../../../../store/upload-files.service';
+import { ModalUploadServiceService } from '../../../../store/modal-upload-service.service';
+import { AuthService } from '../../../../../auth/services/auth/auth.service';
+import { AuthComponent } from '../../../../../auth/layouts/auth/auth.component';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import File3DModel from '../../../interfaces/File3DModel';
+import File3DModel from '../../../../interfaces/File3DModel';
 import { from, Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 import {
@@ -13,17 +13,9 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import UserAddress from '../../../../interfaces/UserAddress';
 
-interface SavedAddress {
-  name: string;
-  lastname: string;
-  phone: string;
-  phoneCode: string;
-  city: string;
-  cp: string;
-  col: string;
-  address: string;
-}
+
 
 @Component({
   selector: 'app-cart-stock',
@@ -58,7 +50,7 @@ export class CartStockComponent {
 
   direccionGuardadaControl = new FormControl<number | null>(-1);
 
-  savedAddresses = [
+  savedAddresses: UserAddress[] =  [
     {
       name: 'Juan',
       lastname: 'Pérez',
