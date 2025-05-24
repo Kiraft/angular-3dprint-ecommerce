@@ -48,7 +48,7 @@ export class UploadComponent {
   }
 
   cargarArchivoTest(): void {
-    this.HttpClient.get('assets/localmodels/encaixe_do_filamento.STL', {
+    this.HttpClient.get('assets/localmodels/jinshi.stl', {
       responseType: 'blob',
     }).subscribe((blob) => {
       // Crear un objeto tipo File

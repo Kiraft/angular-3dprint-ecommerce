@@ -12,7 +12,7 @@ import Relleno3DModel from '../interfaces/Relleno3DModel';
 export class UploadFilesService {
   private fileUploadSubject = new BehaviorSubject<File3DModel[]>([]);
   private fileUploadList: File3DModel[] = [];
-  private cartSubject = new BehaviorSubject<File3DModel[]>([]);
+  // private cartSubject = new BehaviorSubject<File3DModel[]>([]);
 
 
   constructor() {}
@@ -22,13 +22,13 @@ export class UploadFilesService {
     return this.fileUploadSubject.asObservable();
   }
 
-  getCartItems(): Observable<File3DModel[]> {
-    return this.cartSubject.asObservable();
-  }
+  // getCartItems(): Observable<File3DModel[]> {
+  //   return this.cartSubject.asObservable();
+  // }
 
-  addProductCart() {
-    this.cartSubject.next([...this.fileUploadList]);
-  }
+  // addProductCart() {
+  //   this.cartSubject.next([...this.fileUploadList]);
+  // }
 
   // ✅ Método para agregar archivo y emitir nueva lista
   async setFileUploadPush(file: File3DModel): Promise<void> {
