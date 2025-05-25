@@ -42,9 +42,7 @@ export class OptionsQuoteComponent {
   }
 
   acceptQuote() {
-    // const id = this.ActivatedRoute.snapshot.params['id'];
-    // this.route.navigate(['/payment', id]);
-    this.CheckoutService.onProceedToPay()
-
+    const id = this.ActivatedRoute.snapshot.params['id'];
+    this.CheckoutService.onProceedToPay(id)
   }
 }
