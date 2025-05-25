@@ -74,6 +74,8 @@ import { OptionsQuoteComponent } from './feature/account/components/options-quot
 import { TrackingQuoteComponent } from './feature/account/components/tracking-quote/tracking-quote.component';
 import { CardQuoteComponent } from './feature/account/components/card-quote/card-quote.component';
 import { ThankspayComponent } from './feature/account/views/account/thankspay/thankspay.component';
+import { FormAccountComponent } from './feature/account/components/form-account/form-account.component';
+import { SettingsComponent } from './feature/account/components/settings/settings.component';
 
 
 @NgModule({
@@ -136,7 +138,9 @@ import { ThankspayComponent } from './feature/account/views/account/thankspay/th
     OptionsQuoteComponent,
     TrackingQuoteComponent,
     CardQuoteComponent,
-    ThankspayComponent
+    ThankspayComponent,
+    FormAccountComponent,
+    SettingsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, AsyncPipe, NgStyle, HttpClientModule],
   providers: [],

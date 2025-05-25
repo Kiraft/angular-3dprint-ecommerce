@@ -24,6 +24,8 @@ import { QuotesComponent } from './feature/account/views/account/quotes/quotes.c
 import { AddressComponent } from './feature/account/views/account/address/address.component';
 import { DetaillsComponent } from './feature/account/components/detaills/detaills.component';
 import { ThankspayComponent } from './feature/account/views/account/thankspay/thankspay.component';
+import { FormAccountComponent } from './feature/account/components/form-account/form-account.component';
+import { SettingsComponent } from './feature/account/components/settings/settings.component';
 
 const routes: Routes = [
   // auth views
@@ -41,6 +43,8 @@ const routes: Routes = [
     component: AccountComponent,
     children: [
       { path: 'profile', component: ProfileComponent },
+      { path: 'profile/settings', component: SettingsComponent },
+      { path: 'profile/settings/form', component: FormAccountComponent },
       { path: 'address', component: AddressComponent },
       { path: 'shipping', component: ShippingComponent },
       { path: 'quotes', component: QuotesComponent },
