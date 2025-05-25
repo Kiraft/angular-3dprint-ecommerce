@@ -23,6 +23,7 @@ import { ConfirmComponent } from './feature/ecommerce/views/home/cart/confirm/co
 import { QuotesComponent } from './feature/account/views/account/quotes/quotes.component';
 import { AddressComponent } from './feature/account/views/account/address/address.component';
 import { DetaillsComponent } from './feature/account/components/detaills/detaills.component';
+import { ThankspayComponent } from './feature/account/views/account/thankspay/thankspay.component';
 
 const routes: Routes = [
   // auth views
@@ -59,12 +60,8 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'payment',
-    component: PaymentComponent,
-    children: [
-      { path: ':id', component: PaymentComponent },
-      { path: '', redirectTo: '', pathMatch: 'full' },
-    ],
+    path: 'thanks',
+    component: ThankspayComponent
   },
 
   {

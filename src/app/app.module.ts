@@ -73,6 +73,7 @@ import { ModalCodeQuoteComponent } from './feature/account/components/modal-code
 import { OptionsQuoteComponent } from './feature/account/components/options-quote/options-quote.component';
 import { TrackingQuoteComponent } from './feature/account/components/tracking-quote/tracking-quote.component';
 import { CardQuoteComponent } from './feature/account/components/card-quote/card-quote.component';
+import { ThankspayComponent } from './feature/account/views/account/thankspay/thankspay.component';
 
 
 @NgModule({
@@ -134,7 +135,8 @@ import { CardQuoteComponent } from './feature/account/components/card-quote/card
     ModalCodeQuoteComponent,
     OptionsQuoteComponent,
     TrackingQuoteComponent,
-    CardQuoteComponent
+    CardQuoteComponent,
+    ThankspayComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, AsyncPipe, NgStyle, HttpClientModule],
   providers: [],
