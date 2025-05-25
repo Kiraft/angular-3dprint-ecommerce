@@ -1,11 +1,16 @@
 <body class="bg-gray-900 text-white min-h-screen p-6">
-  <h2 class="text-2xl font-bold mb-6 px-[360px]">Payment</h2>
+  <h2 class="text-2xl font-bold mb-6 text-center">Elige como pagar</h2>
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
     <!-- Left: Payment methods -->
     <div>
-
       <!-- Visa -->
-      <div class="bg-gray-800 rounded-lg p-4 mb-4 border border-blue-500">
+      <div
+        (click)="selectMethod('visa')"
+        [class.border-blue-500]="selectedMethod === 'visa'"
+        [class.ring]="selectedMethod === 'visa'"
+        [class.ring-blue-400]="selectedMethod === 'visa'"
+        class="cursor-pointer bg-gray-800 rounded-lg p-4 mb-4 border transition-all duration-200"
+      >
         <div class="flex justify-between items-center">
           <div>
             <p class="font-semibold">Visa ending in 7658</p>
@@ -13,51 +18,55 @@
           </div>
           <p class="text-lg font-semibold">VISA</p>
         </div>
-        <div class="flex space-x-4 mt-2 text-sm text-blue-400">
-          <button class="hover:underline">Delete</button>
-          <button class="hover:underline">Edit</button>
-        </div>
       </div>
 
       <!-- Mastercard -->
-      <div class="bg-gray-800 rounded-lg p-4 mb-4">
+      <div
+        (click)="selectMethod('mastercard')"
+        [class.border-blue-500]="selectedMethod === 'mastercard'"
+        [class.ring]="selectedMethod === 'mastercard'"
+        [class.ring-blue-400]="selectedMethod === 'mastercard'"
+        class="cursor-pointer bg-gray-800 rounded-lg p-4 mb-4 border transition-all duration-200"
+      >
         <div class="flex justify-between items-center">
           <div>
             <p class="font-semibold">Mastercard ending in 8429</p>
             <p class="text-sm text-gray-400">Expiry 04/2026</p>
           </div>
-          <div class="text-lg font-semibold">
-            <span class="text-gray-400">Mastercard</span>
-          </div>
-        </div>
-        <div class="flex space-x-4 mt-2 text-sm text-blue-400">
-          <button class="hover:underline">Delete</button>
-          <button class="hover:underline">Edit</button>
+          <p class="text-lg font-semibold text-gray-400">Mastercard</p>
         </div>
       </div>
 
       <!-- PayPal -->
-      <div class="bg-gray-800 rounded-lg p-4 mb-6">
+      <div
+        (click)="selectMethod('paypal')"
+        [class.border-blue-500]="selectedMethod === 'paypal'"
+        [class.ring]="selectedMethod === 'paypal'"
+        [class.ring-blue-400]="selectedMethod === 'paypal'"
+        class="cursor-pointer bg-gray-800 rounded-lg p-4 mb-4 border transition-all duration-200"
+      >
         <div class="flex justify-between items-center">
-          <div>
-            <p class="font-semibold">Paypal account</p>
-          </div>
-          <div class="text-lg font-semibold">PayPal</div>
-        </div>
-        <div class="flex space-x-4 mt-2 text-sm text-blue-400">
-          <button class="hover:underline">Delete</button>
-          <button class="hover:underline">Edit</button>
+          <p class="font-semibold">Paypal account</p>
+          <p class="text-lg font-semibold">PayPal</p>
         </div>
       </div>
 
-      <div class="flex items-center justify-between my-6">
-        <div class="w-full border-t border-gray-700"></div>
-        <span class="px-4 text-gray-400">or</span>
-        <div class="w-full border-t border-gray-700"></div>
+      <!-- Add New Card Option -->
+      <div
+        (click)="selectMethod('new')"
+        [class.border-blue-500]="selectedMethod === 'new'"
+        [class.ring]="selectedMethod === 'new'"
+        [class.ring-blue-400]="selectedMethod === 'new'"
+        class="cursor-pointer bg-gray-800 rounded-lg p-4 mb-6 border transition-all duration-200"
+      >
+        <div class="flex justify-between items-center">
+          <p class="font-semibold">Use a new card</p>
+          <p class="text-lg font-semibold text-blue-400">New</p>
+        </div>
       </div>
 
-      <!-- Add new payment -->
-      <form class="space-y-4">
+      <!-- Add new payment form -->
+      <form *ngIf="selectedMethod === 'new'" class="space-y-4">
         <div>
           <label class="text-sm text-gray-400"
             >Full name (as displayed on card)*</label
@@ -159,3 +168,4 @@
     <a href="#" class="underline">Flowbite LLC</a> – United States Of America
   </p>
 </body>
+

@@ -7,17 +7,30 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-detaills',
   templateUrl: './detaills.component.html',
-  styleUrl: './detaills.component.css'
+  styleUrl: './detaills.component.css',
 })
 export class DetaillsComponent {
-
   quote$: Observable<Quotes | undefined>;
 
-  constructor(routerActive: ActivatedRoute, private QuotesService: QuotesService) {
-     const idFromRoute = routerActive.snapshot.params['id'];
-  const formattedId = idFromRoute.startsWith('#') ? idFromRoute : `#${idFromRoute}`;
+  constructor(
+    routerActive: ActivatedRoute,
+    private QuotesService: QuotesService
+  ) {
 
-  this.quote$ = this.QuotesService.getQuoteById(formattedId);
+    console.log('Lo que tiene la ruta');
+
+    console.log(routerActive.snapshot.params['id']);
+
+    const idFromRoute = routerActive.snapshot.params['id'];
+    const formattedId = idFromRoute.startsWith('#')
+      ? idFromRoute
+      : `#${idFromRoute}`;
+
+    this.quote$ = this.QuotesService.getQuoteById(formattedId);
+
+    console.log('Lo que se le pasa al servicio');
+    console.log(formattedId);
+
 
   }
 }

@@ -62,9 +62,8 @@ const routes: Routes = [
     path: 'payment',
     component: PaymentComponent,
     children: [
-      { path: 'cart-stock', component: CartStockComponent },
-      { path: 'payment', component: PaymentComponent },
-      { path: '', redirectTo: 'cart-stock', pathMatch: 'full' },
+      { path: ':id', component: PaymentComponent },
+      { path: '', redirectTo: '', pathMatch: 'full' },
     ],
   },
 

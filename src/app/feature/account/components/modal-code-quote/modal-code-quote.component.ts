@@ -1,3 +1,4 @@
+import { QuotesService } from './../../services/quotes.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalCodeQuoteService } from './../../services/modal-code-quote.service';
 import { Component } from '@angular/core';
@@ -15,7 +16,8 @@ export class ModalCodeQuoteComponent {
   constructor(
     private ModalCodeQuoteService: ModalCodeQuoteService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private QuotesService: QuotesService
   ) {
     // #FWB139485699 esta estructura debe tener el codigo
     this.codeQuoteCodeForm = this.fb.group({
@@ -26,17 +28,27 @@ export class ModalCodeQuoteComponent {
   submit() {
     if (this.codeQuoteCodeForm.valid) {
       const code = this.codeQuoteCodeForm.get('code')?.value;
-      this.ModalCodeQuoteService.setCodeQuote(code);
-      this.ModalCodeQuoteService.closeModal();
 
-      this.router.navigate(['/account/quotes/' + code + '/details']);
+      this.QuotesService.getQuoteById(code).subscribe((quote) => {
+        if (quote) {
+          this.ModalCodeQuoteService.setCodeQuote(code);
+          this.ModalCodeQuoteService.closeModal();
+
+          this.router.navigate(['/account/quotes', code, 'details']);
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Cotización inválida',
+            text: 'La cotización no existe o ya fue procesada.',
+          });
+        }
+      });
     } else {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Numero de cotizacion invalido'
+        text: 'Número de cotización inválido',
       });
-      return;
     }
   }
 

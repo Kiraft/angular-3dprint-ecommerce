@@ -4,17 +4,17 @@
   >
     <h3 class="text-xl font-semibold text-gray-900">Opciones</h3>
 
-
     <div class="gap-4 sm:flex sm:items-center">
-      <a
-        routerLink="/payment"
+      <button
+        (click)="acceptQuote()"
         type="button"
-        class="w-full rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100"
+        class="w-full rounded-lg border border-blue-700 px-3 py-2 text-center text-sm font-medium text-blue-700 hover:bg-blue-700 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 lg:w-auto"
       >
         Aceptar
-      </a>
+      </button>
 
       <button
+        (click)="rejectQuote()"
         type="button"
         class="w-full rounded-lg border border-red-700 px-3 py-2 text-center text-sm font-medium text-red-700 hover:bg-red-700 hover:text-white focus:outline-none focus:ring-4 focus:ring-red-300 lg:w-auto"
       >
