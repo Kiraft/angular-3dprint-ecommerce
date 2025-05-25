@@ -1,5 +1,5 @@
 import { QuotesService } from './../../services/quotes.service';
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { ActivatedRoute, RouterLinkActive } from '@angular/router';
 import Quotes from '../../interfaces/Quotes';
 import { Observable } from 'rxjs';
@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class DetaillsComponent {
   quote$: Observable<Quotes | undefined>;
+  show: boolean = false;
 
   constructor(
     routerActive: ActivatedRoute,
@@ -32,5 +33,9 @@ export class DetaillsComponent {
     console.log(formattedId);
 
 
+  }
+
+  recibirShow(evento: boolean) {
+    this.show = evento;
   }
 }

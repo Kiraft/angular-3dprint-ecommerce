@@ -131,7 +131,7 @@ export class QuotesService {
             address: 'Av. Vallarta 456',
           },
           price: 499,
-          status: 'Cancelado',
+          status: 'Fabricando',
           paymentMethod: 'Visa',
           products: [],
           discount: 0,

@@ -1,7 +1,7 @@
 import { CheckoutService } from './../../services/checkout.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { QuotesService } from './../../services/quotes.service';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,6 +10,9 @@ import Swal from 'sweetalert2';
   styleUrl: './options-quote.component.css',
 })
 export class OptionsQuoteComponent {
+
+  @Output() show = new EventEmitter<boolean>();
+
   constructor(
     private QuotesService: QuotesService,
     private route: Router,
@@ -25,7 +28,7 @@ export class OptionsQuoteComponent {
       // confirmButtonText: 'Save',
       showConfirmButton: false,
       denyButtonText: `Rechazar ahora!`,
-      cancelButtonText: "Cancelar"
+      cancelButtonText: 'Cancelar',
     }).then((result) => {
       if (result.isConfirmed) {
       } else if (result.isDenied) {
@@ -38,11 +41,21 @@ export class OptionsQuoteComponent {
         this.route.navigate(['/account/quotes']);
       }
     });
+  }
 
+  enviarAlPadre() {
+    this.show.emit(true);
   }
 
   acceptQuote() {
     const id = this.ActivatedRoute.snapshot.params['id'];
-    this.CheckoutService.onProceedToPay(id)
+    this.enviarAlPadre();
+    // this.show = true;
+
+    // setTimeout(() => {
+    //   this.show = false;
+    // }, 2000);
+
+    this.CheckoutService.onProceedToPay(id);
   }
 }

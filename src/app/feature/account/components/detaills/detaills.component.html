@@ -87,7 +87,7 @@
         </div>
         @if (quote.statusQuote === 'Pendiente') {
 
-          <app-options-quote></app-options-quote>
+          <app-options-quote (show)="recibirShow($event)" ></app-options-quote>
         }@else {
 
           <app-tracking-quote></app-tracking-quote>
@@ -98,3 +98,4 @@
   </section>
 }
 
+<app-loading-overlay [show]="show" ></app-loading-overlay>

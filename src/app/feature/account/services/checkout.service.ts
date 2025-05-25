@@ -14,9 +14,9 @@ export class CheckoutService {
   constructor(private http: HttpClient, private QuotesService: QuotesService) {}
 
   onProceedToPay(id: any): any {
-    setTimeout(() => {
+
       this.QuotesService.updateQuoteStatusCode(id, 'Aceptado');
-    }, 10000);
+
 
     return this.http
       .post(`${this._serverURL}/checkout`, {
