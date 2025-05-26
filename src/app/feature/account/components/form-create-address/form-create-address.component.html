@@ -1,4 +1,4 @@
-<div class="mx-auto max-w-[990px] max-h-full p-4">
+<div class="mx-auto max-w-[990px] h-full p-4">
   <!-- Modal content -->
   <div class="relative rounded-lg bg-[#E6E6E6] shadow">
     <!-- Modal header -->
@@ -34,7 +34,7 @@
     <!-- Modal body -->
     <form class="p-4 md:p-5" [formGroup]="myFormAddress" (submit)="submit()">
       <div class="mb-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <div class="col-span-2 sm:col-span-1">
+        <div class="col-span-2 sm:col-span-1 max-w-[200px]">
           <label
             for="full_name_info_modal"
             class="mb-2 block text-sm font-medium text-gray-900"
@@ -49,9 +49,19 @@
             placeholder="Ingrese su nombre"
             required
           />
+          <div
+            *ngIf="
+              myFormAddress.get('name')?.touched &&
+              myFormAddress.get('name')?.invalid
+            "
+          >
+            <small class="text-red-500"
+              >El nombre es requerido y debe tener máximo 44 caracteres.</small
+            >
+          </div>
         </div>
 
-        <div class="col-span-2 sm:col-span-1">
+        <div class="col-span-2 sm:col-span-1 max-w-[200px]">
           <label
             for="email_info_modal"
             class="mb-2 block text-sm font-medium text-gray-900"
@@ -66,6 +76,17 @@
             placeholder="Ingresa tus apellidos"
             required
           />
+          <div
+            *ngIf="
+              myFormAddress.get('lastname')?.touched &&
+              myFormAddress.get('lastname')?.invalid
+            "
+          >
+            <small class="text-red-500"
+              >El apellido es requerido y debe tener máximo 44
+              caracteres.</small
+            >
+          </div>
         </div>
 
         <div class="col-span-2">
@@ -105,7 +126,7 @@
           </div>
         </div>
 
-        <div class="col-span-2 sm:col-span-1">
+        <div class="col-span-2 sm:col-span-1 max-w-[200px]">
           <label
             for="company_name"
             class="mb-2 block text-sm font-medium text-gray-900"
@@ -119,8 +140,18 @@
             class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
             placeholder="Ejem: 62742"
           />
+          <div
+            *ngIf="
+              myFormAddress.get('cp')?.touched &&
+              myFormAddress.get('cp')?.invalid
+            "
+          >
+            <small class="text-red-500"
+              >El codigo postal es requerido y debe tener máximo 5 digitos.</small
+            >
+          </div>
         </div>
-        <div class="col-span-2 sm:col-span-1">
+        <div class="col-span-2 sm:col-span-1 max-w-[200px]">
           <label
             for="vat_number"
             class="mb-2 block text-sm font-medium text-gray-900"
@@ -134,6 +165,16 @@
             class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
             placeholder="Ejem: Cuautla"
           />
+          <div
+            *ngIf="
+              myFormAddress.get('city')?.touched &&
+              myFormAddress.get('city')?.invalid
+            "
+          >
+            <small class="text-red-500"
+              >La ciudad es requerida y debe tener máximo 44 caracteres.</small
+            >
+          </div>
         </div>
         <div class="col-span-2">
           <label
@@ -150,6 +191,16 @@
             placeholder="Ejem: Pablo Torres Burgos"
             required
           />
+                    <div
+            *ngIf="
+              myFormAddress.get('col')?.touched &&
+              myFormAddress.get('col')?.invalid
+            "
+          >
+            <small class="text-red-500"
+              >La colonia es requerida y debe tener máximo 44 caracteres.</small
+            >
+          </div>
         </div>
         <div class="col-span-2">
           <label
@@ -165,22 +216,42 @@
             class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
             placeholder="Escribe con detalle tu direccion"
           ></textarea>
+                    <div
+            *ngIf="
+              myFormAddress.get('address')?.touched &&
+              myFormAddress.get('address')?.invalid
+            "
+          >
+            <small class="text-red-500"
+              >La direccion es requerida y debe tener máximo 44 caracteres.</small
+            >
+          </div>
         </div>
       </div>
       <div class="border-t border-gray-200 pt-4 md:pt-5">
+        @if (isEdit) {
+
         <button
           type="submit"
           class="me-2 inline-flex items-center bg-[#E7723F] rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300"
         >
-          Agregar direccion
+          Guardar
         </button>
+        }@else {
         <button
-          type="button"
+          type="submit"
+          class="me-2 inline-flex items-center bg-[#E7723F] rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300"
+        >
+          Agregar
+        </button>
+        }
+        <a
+          routerLink="/account/address"
           data-modal-toggle="accountInformationModal2"
           class="me-2 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100"
         >
           Cancel
-        </button>
+        </a>
       </div>
     </form>
   </div>

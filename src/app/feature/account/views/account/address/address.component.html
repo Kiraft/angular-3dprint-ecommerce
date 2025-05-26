@@ -9,14 +9,16 @@
     </button>
   </div>
 
-  @if (addresses$ | async; as addresses) { @for (item of addresses; track
-  $index) {
+  <div class="flex gap-5 flex-wrap">
 
-  <app-address-card [address]="item"></app-address-card>
+    @if (addresses$ | async; as addresses) { @for (item of addresses; track
+    $index) {
 
-  }@empty {
+    <app-address-card [address]="item" ></app-address-card>
+
+    }@empty {
     <p>No cuentas con direcciones en este momento</p>
-  } }
+    } }
+  </div>
+
 </div>
-
-
