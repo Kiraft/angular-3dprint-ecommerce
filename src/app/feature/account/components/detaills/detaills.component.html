@@ -9,71 +9,29 @@
     <div class="mt-6 sm:mt-8 lg:flex lg:gap-8">
       <!-- Parte izquierda -->
       <div
-        class="w-full divide-y divide-gray-200 overflow-hidden rounded-lg border border-gray-200 lg:max-w-xl xl:max-w-2xl"
+        class="w-full divide-y min-w-[622.16px] divide-gray-200 overflow-hidden rounded-lg border border-gray-200 lg:max-w-xl xl:max-w-2xl"
       >
-
         @for (item of quote.products; track $index) {
 
-        <div class="space-y-4 p-6">
-          <div class="flex items-center gap-6">
-            <a href="#" class="h-14 w-14 shrink-0">
-              <img
-                class="h-full w-full"
-                src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg"
-                alt="imac image"
-              />
-              <img
-                class="hidden h-full w-full"
-                src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg"
-                alt="imac image"
-              />
-            </a>
-
-            <a
-              href="#"
-              class="min-w-0 flex-1 font-medium text-gray-900 hover:underline"
-            >
-              {{item.name}}
-            </a>
-          </div>
-
-          <div class="flex items-center justify-between gap-4">
-            <p class="text-sm font-normal text-gray-500">
-              <span class="font-medium text-gray-900">Product ID:</span>
-              BJ8364850
-            </p>
-
-            <div class="flex items-center justify-end gap-4">
-              <p class="text-base font-normal text-gray-900">x1</p>
-
-              <p class="text-xl font-bold leading-tight text-gray-900">
-                $1,499
-              </p>
-            </div>
-          </div>
-        </div>
+        <app-card-details [item]="item"></app-card-details>
         }
 
         <div class="space-y-4 bg-gray-50 p-6">
           <div class="space-y-2">
             <dl class="flex items-center justify-between gap-4">
-              <dt class="font-normal text-gray-500">Original price</dt>
-              <dd class="font-medium text-gray-900">$6,592.00</dd>
+              <dt class="font-normal text-gray-500">Precio original</dt>
+              <dd class="font-medium text-gray-900">${{quote.price}}</dd>
+            </dl>
+
+
+            <dl class="flex items-center justify-between gap-4">
+              <dt class="font-normal text-gray-500">Precio envio ({{quote.shippingType}}) </dt>
+              <dd class="font-medium text-gray-900">${{quote.shippingPrice}}</dd>
             </dl>
 
             <dl class="flex items-center justify-between gap-4">
-              <dt class="font-normal text-gray-500">Savings</dt>
-              <dd class="text-base font-medium text-green-500">-$299.00</dd>
-            </dl>
-
-            <dl class="flex items-center justify-between gap-4">
-              <dt class="font-normal text-gray-500">Store Pickup</dt>
-              <dd class="font-medium text-gray-900">$99</dd>
-            </dl>
-
-            <dl class="flex items-center justify-between gap-4">
-              <dt class="font-normal text-gray-500">Tax</dt>
-              <dd class="font-medium text-gray-900">$799</dd>
+              <dt class="font-normal text-gray-500">Descuento</dt>
+              <dd class="text-base font-medium text-green-500">-${{quote.price * quote.discount}}</dd>
             </dl>
           </div>
 
@@ -81,7 +39,7 @@
             class="flex items-center justify-between gap-4 border-t border-gray-200 pt-2"
           >
             <dt class="text-lg font-bold text-gray-900">Total</dt>
-            <dd class="text-lg font-bold text-gray-900">$7,191.00</dd>
+            <dd class="text-lg font-bold text-gray-900">${{(quote.price - (quote.price * quote.discount)) + quote.shippingPrice}}</dd>
           </dl>
         </div>
       </div>
@@ -92,7 +50,6 @@
 
       <app-tracking-quote></app-tracking-quote>
       }
-      <!-- Parte derecha -->
     </div>
   </div>
 </section>

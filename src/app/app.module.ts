@@ -78,6 +78,7 @@ import { FormAccountComponent } from './feature/account/components/form-account/
 import { SettingsComponent } from './feature/account/components/settings/settings.component';
 import { AddressCardComponent } from './feature/account/components/address-card/address-card.component';
 import { FormCreateAddressComponent } from './feature/account/components/form-create-address/form-create-address.component';
+import { CardDetailsComponent } from './feature/account/components/card-details/card-details.component';
 
 
 @NgModule({
@@ -144,7 +145,8 @@ import { FormCreateAddressComponent } from './feature/account/components/form-cr
     FormAccountComponent,
     SettingsComponent,
     AddressCardComponent,
-    FormCreateAddressComponent
+    FormCreateAddressComponent,
+    CardDetailsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, AsyncPipe, NgStyle, HttpClientModule],
   providers: [],

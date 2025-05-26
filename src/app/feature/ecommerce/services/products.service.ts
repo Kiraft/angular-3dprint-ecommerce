@@ -17,8 +17,8 @@ export class ProductsService {
         title: 'LLavero de Cocodrilo',
         name: 'LLavero de Cocodrilo',
         urlFile: [{
-          name:'assets/localmodels/SquareAnimals/Square_Croco.stl' ,
-          url: 'Square_Croco'
+          name:'Square_Croco' ,
+          url: 'assets/localmodels/SquareAnimals/Square_Croco.stl'
         }],
       },
       {

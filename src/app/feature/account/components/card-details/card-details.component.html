@@ -1,0 +1,33 @@
+<div class="space-y-4 p-6">
+  <div class="flex items-center gap-6">
+    <a class="h-500 w-500 border-2 rounded-lg border-neutral-400">
+      <app-preview3-d
+        *ngIf="loadedFile"
+        [file]="loadedFile"
+        class="block h-24 w-32"
+      ></app-preview3-d>
+    </a>
+
+    <a
+      href="#"
+      class="min-w-0 flex-1 font-medium text-gray-900 hover:underline"
+    >
+      {{ item.name }}
+    </a>
+  </div>
+
+  <div class="flex items-center justify-between gap-4">
+    <p class="text-sm font-normal text-gray-500">
+      <span class="font-medium text-gray-900">Product ID:</span>
+      BJ8364850
+    </p>
+
+    <div class="flex items-center justify-end gap-4">
+      <p class="text-base font-normal text-gray-900">x{{ item.quantity }}</p>
+
+      <p class="text-xl font-bold leading-tight text-gray-900">
+        ${{ item.unit_price }}
+      </p>
+    </div>
+  </div>
+</div>
