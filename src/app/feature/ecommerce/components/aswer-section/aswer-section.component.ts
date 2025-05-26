@@ -28,7 +28,7 @@ export class AswerSectionComponent {
       question: '¿Cuanto cuesta el servicio de impresión 3D?',
       answer: `El costo de la impresión 3D puede variar considerablemente. Depende de múltiples factores, como los
               datos volumétricos, el material, el tiempo de entrega y las opciones de resolución.
-              Si tiene un archivo CAD 3D, puede subirlo y consultar los precios con nuestra herramienta de cotización
+              Si tiene un archivo .stl, puede subirlo y consultar los precios con nuestra herramienta de cotización
               instantánea en la parte superior.`,
       open: false,
     },
@@ -44,14 +44,14 @@ export class AswerSectionComponent {
       id: 4,
       question:
         'El formato de archivo que intento cargar no es aceptado, ¿qué debo hacer?',
-      answer: `Si su modelo no tiene una extensión válida para la calculadora, deberá proporcionarnos el archivo a
+      answer: `Si su modelo no tiene una extensión válida para la calculadora, deberá enviar un correo a vulkano@ayuda.com y proporcionarnos el archivo a
               través del formulario de contacto para su revisión manual.`,
       open: false,
     },
     {
       id: 5,
       question: '¿Puedo pedir una sola pieza? ¿Y series de miles de piezas?',
-      answer: `Sí, en la calculadora online encontrarás la opción de seleccionar desde 1 hasta 500 unidades de forma automática,
+      answer: `Sí, en la calculadora online encontrarás la opción de seleccionar desde 1 hasta 200 unidades de forma automática,
                 junto con el correspondiente descuento gradual en función de los ejemplares seleccionados.
                 Si necesita una tirada mayor, comuníquese con nosotros antes de confirmar un pedido.`,
       open: false,
@@ -66,7 +66,7 @@ export class AswerSectionComponent {
     {
       id: 7,
       question: '¿Recibiré una factura por mi pedido?',
-      answer: `Sí. Cuando marcamos un pedido como completado y listo para enviar o recoger, recibirás un correo electrónico automático
+      answer: `Sí. Cuando marcamos un pedido como completado y listo para enviar, recibirás un correo electrónico automático
                 con la factura y el resumen del pedido a la dirección de correo electrónico proporcionada durante el proceso de compra.`,
       open: false,
     },
