@@ -76,6 +76,8 @@ import { CardQuoteComponent } from './feature/account/components/card-quote/card
 import { ThankspayComponent } from './feature/account/views/account/thankspay/thankspay.component';
 import { FormAccountComponent } from './feature/account/components/form-account/form-account.component';
 import { SettingsComponent } from './feature/account/components/settings/settings.component';
+import { AddressCardComponent } from './feature/account/components/address-card/address-card.component';
+import { FormCreateAddressComponent } from './feature/account/components/form-create-address/form-create-address.component';
 
 
 @NgModule({
@@ -140,7 +142,9 @@ import { SettingsComponent } from './feature/account/components/settings/setting
     CardQuoteComponent,
     ThankspayComponent,
     FormAccountComponent,
-    SettingsComponent
+    SettingsComponent,
+    AddressCardComponent,
+    FormCreateAddressComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, AsyncPipe, NgStyle, HttpClientModule],
   providers: [],

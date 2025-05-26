@@ -15,7 +15,7 @@ app.post('/checkout', async (req, res) => {
   const items = req.body.items.map(( item )=> {
     return {
       price_data: {
-        currency: 'usd',
+        currency: 'mxn',
         product_data: {
           name: item.title
         },

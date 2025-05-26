@@ -1,3 +1,4 @@
+import { CountriesCodesService } from './../../../../../../shared/services/countries-codes.service';
 import { UploadFilesService } from '../../../../store/upload-files.service';
 import { ModalUploadServiceService } from '../../../../store/modal-upload-service.service';
 import { AuthService } from '../../../../../auth/services/auth/auth.service';
@@ -14,6 +15,7 @@ import {
   Validators,
 } from '@angular/forms';
 import UserAddress from '../../../../interfaces/UserAddress';
+import CountryCode from '../../../../../../shared/interfaces/CountryCode';
 
 
 
@@ -26,14 +28,17 @@ export class CartStockComponent {
   filesList$: Observable<File3DModel[]>;
   modalType$ = this.ModalUploadServiceService.getModalType();
   myFormData: FormGroup;
+  countriesCode$: Observable<CountryCode[]>;
+
 
   constructor(
     private fb: FormBuilder,
     private ModalUploadServiceService: ModalUploadServiceService,
     private router: Router,
     private UploadFilesService: UploadFilesService,
-    private AuthService: AuthService
+    private AuthService: AuthService, private CountriesCodesService: CountriesCodesService
   ) {
+    this.countriesCode$ =  this.CountriesCodesService.getCountryCodes();
     this.filesList$ = this.UploadFilesService.getFileUploadList();
     this.myFormData = this.fb.group({
       tipo: [''],

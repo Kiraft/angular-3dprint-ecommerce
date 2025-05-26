@@ -36,6 +36,32 @@ export class AuthService {
       );
   }
 
+  register(
+    email: string,
+    password: string,
+    username: string
+  ): Observable<boolean> {
+    return this.http
+      .post<LoginResponse>(`${environment.springURL}/auth/register`, {
+        username: username,
+        email: email,
+        password: password,
+      })
+      .pipe(
+        map((res) => {
+          if (res.success) {
+            console.log(res);
+
+            return true;
+          } else {
+            console.log(res);
+
+            return false;
+          }
+        })
+      );
+  }
+
   logout(): void {
     localStorage.removeItem(this.KEY);
     localStorage.removeItem(this.KEY2);

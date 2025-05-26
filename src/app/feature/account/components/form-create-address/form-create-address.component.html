@@ -1,0 +1,187 @@
+<div class="mx-auto max-w-[990px] max-h-full p-4">
+  <!-- Modal content -->
+  <div class="relative rounded-lg bg-[#E6E6E6] shadow">
+    <!-- Modal header -->
+    <div
+      class="flex items-center justify-between rounded-t border-b border-gray-200 p-4 md:p-5"
+    >
+      <h3 class="text-lg font-semibold text-gray-900">
+        Ingresa la informacion de tu direccion
+      </h3>
+      <button
+        type="button"
+        class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900"
+        data-modal-toggle="accountInformationModal2"
+      >
+        <svg
+          class="h-3 w-3"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 14 14"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+          />
+        </svg>
+        <span class="sr-only">Close modal</span>
+      </button>
+    </div>
+    <!-- Modal body -->
+    <form class="p-4 md:p-5" [formGroup]="myFormAddress" (submit)="submit()">
+      <div class="mb-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div class="col-span-2 sm:col-span-1">
+          <label
+            for="full_name_info_modal"
+            class="mb-2 block text-sm font-medium text-gray-900"
+          >
+            Nombre
+          </label>
+          <input
+            formControlName="name"
+            type="text"
+            id="full_name_info_modal"
+            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+            placeholder="Ingrese su nombre"
+            required
+          />
+        </div>
+
+        <div class="col-span-2 sm:col-span-1">
+          <label
+            for="email_info_modal"
+            class="mb-2 block text-sm font-medium text-gray-900"
+          >
+            Apellidos
+          </label>
+          <input
+            formControlName="lastname"
+            type="text"
+            id="email_info_modal"
+            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+            placeholder="Ingresa tus apellidos"
+            required
+          />
+        </div>
+
+        <div class="col-span-2">
+          <label
+            for="phone-input_billing_modal"
+            class="mb-2 block text-sm font-medium text-gray-900"
+          >
+            Numero de telefono
+          </label>
+          <div class="flex items-center">
+            <div class="relative w-[100px]">
+              <input
+                list="codes"
+                type="text"
+                formControlName="phoneCode"
+                placeholder="+52"
+                class="z-20 block w-full rounded-e-lg border border-s-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+              />
+              <datalist id="codes">
+                <option value="+52"></option>
+                <option value="+1"></option>
+                <option value="+54"></option>
+                <option value="+34"></option>
+              </datalist>
+            </div>
+            <div class="relative w-full">
+              <input
+                formControlName="phone"
+                type="text"
+                id="phone-input"
+                class="z-20 block w-full rounded-e-lg border border-s-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                placeholder="123-456-7890"
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-span-2 sm:col-span-1">
+          <label
+            for="company_name"
+            class="mb-2 block text-sm font-medium text-gray-900"
+          >
+            Codigo postal
+          </label>
+          <input
+            type="text"
+            formControlName="cp"
+            id="company_name"
+            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+            placeholder="Ejem: 62742"
+          />
+        </div>
+        <div class="col-span-2 sm:col-span-1">
+          <label
+            for="vat_number"
+            class="mb-2 block text-sm font-medium text-gray-900"
+          >
+            Ciudad
+          </label>
+          <input
+            formControlName="city"
+            type="text"
+            id="vat_number"
+            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+            placeholder="Ejem: Cuautla"
+          />
+        </div>
+        <div class="col-span-2">
+          <label
+            for="pick-up-point-input"
+            class="mb-2 block text-sm font-medium text-gray-900"
+          >
+            Colonia
+          </label>
+          <input
+            formControlName="col"
+            type="text"
+            id="pick-up-point-input"
+            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+            placeholder="Ejem: Pablo Torres Burgos"
+            required
+          />
+        </div>
+        <div class="col-span-2">
+          <label
+            for="address_billing_modal"
+            class="mb-2 block text-sm font-medium text-gray-900"
+          >
+            Direccion
+          </label>
+          <textarea
+            formControlName="address"
+            id="address_billing_modal"
+            rows="4"
+            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+            placeholder="Escribe con detalle tu direccion"
+          ></textarea>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 pt-4 md:pt-5">
+        <button
+          type="submit"
+          class="me-2 inline-flex items-center bg-[#E7723F] rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300"
+        >
+          Agregar direccion
+        </button>
+        <button
+          type="button"
+          data-modal-toggle="accountInformationModal2"
+          class="me-2 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

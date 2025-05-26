@@ -26,6 +26,7 @@ import { DetaillsComponent } from './feature/account/components/detaills/detaill
 import { ThankspayComponent } from './feature/account/views/account/thankspay/thankspay.component';
 import { FormAccountComponent } from './feature/account/components/form-account/form-account.component';
 import { SettingsComponent } from './feature/account/components/settings/settings.component';
+import { FormCreateAddressComponent } from './feature/account/components/form-create-address/form-create-address.component';
 
 const routes: Routes = [
   // auth views
@@ -46,6 +47,8 @@ const routes: Routes = [
       { path: 'profile/settings', component: SettingsComponent },
       { path: 'profile/settings/form', component: FormAccountComponent },
       { path: 'address', component: AddressComponent },
+      { path: 'address/form/:id', component: FormCreateAddressComponent },
+      { path: 'address/form', component: FormCreateAddressComponent },
       { path: 'shipping', component: ShippingComponent },
       { path: 'quotes', component: QuotesComponent },
       { path: 'quotes/:id/details', component: DetaillsComponent},
