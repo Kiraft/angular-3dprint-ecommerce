@@ -94,8 +94,13 @@
           class="w-full px-2 py-1 bg-white border border-gray-700 rounded text-black text-sm"
         >
           <option value="-1" disabled selected>Direcciones guardadas</option>
-          @for (item of savedAddresses; track $index) {
-          <option [value]="$index">{{ item.name }}</option>
+
+          @if (savedAddresses |async; as address) {
+
+            @for (item of address; track $index) {
+            <option [value]="$index">{{ item.name }}</option>
+            }
+
           }
         </select>
       </div>
@@ -192,7 +197,7 @@
         <option value="">Selecciona una ciudad</option>
         <option value="Ciudad de México">Ciudad de México</option>
         <option value="Guadalajara">Guadalajara</option>
-        <option value="Monterrey">Monterrey</option>
+        <option value="Monterrey">Cuautla</option>
       </select>
       <!-- Dirección -->
       <div class="text-sm">

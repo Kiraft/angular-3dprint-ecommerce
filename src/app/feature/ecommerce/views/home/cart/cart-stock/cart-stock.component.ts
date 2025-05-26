@@ -1,12 +1,12 @@
+import { AuthService } from './../../../../../auth/services/auth/auth.service';
 import { CountriesCodesService } from './../../../../../../shared/services/countries-codes.service';
 import { UploadFilesService } from '../../../../store/upload-files.service';
 import { ModalUploadServiceService } from '../../../../store/modal-upload-service.service';
-import { AuthService } from '../../../../../auth/services/auth/auth.service';
 import { AuthComponent } from '../../../../../auth/layouts/auth/auth.component';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import File3DModel from '../../../../interfaces/File3DModel';
-import { from, Observable } from 'rxjs';
+import { firstValueFrom, from, Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 import {
   FormBuilder,
@@ -16,8 +16,9 @@ import {
 } from '@angular/forms';
 import UserAddress from '../../../../interfaces/UserAddress';
 import CountryCode from '../../../../../../shared/interfaces/CountryCode';
-
-
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../../../../../environments/environment.development';
+import { AddressReponse } from '../../../../../account/interfaces/AddressResponse';
 
 @Component({
   selector: 'app-cart-stock',
@@ -30,15 +31,16 @@ export class CartStockComponent {
   myFormData: FormGroup;
   countriesCode$: Observable<CountryCode[]>;
 
-
   constructor(
     private fb: FormBuilder,
     private ModalUploadServiceService: ModalUploadServiceService,
     private router: Router,
     private UploadFilesService: UploadFilesService,
-    private AuthService: AuthService, private CountriesCodesService: CountriesCodesService
+    private AuthService: AuthService,
+    private CountriesCodesService: CountriesCodesService,
+    private http: HttpClient
   ) {
-    this.countriesCode$ =  this.CountriesCodesService.getCountryCodes();
+    this.countriesCode$ = this.CountriesCodesService.getCountryCodes();
     this.filesList$ = this.UploadFilesService.getFileUploadList();
     this.myFormData = this.fb.group({
       tipo: [''],
@@ -51,32 +53,15 @@ export class CartStockComponent {
       col: [''],
       address: [''],
     });
+
+    this.savedAddresses = this.http.get<AddressReponse[]>(
+      `${environment.springURL}/users/${this.AuthService.getUserIdentity()?.id}/address`
+    );
   }
 
   direccionGuardadaControl = new FormControl<number | null>(-1);
 
-  savedAddresses: UserAddress[] =  [
-    {
-      name: 'Juan',
-      lastname: 'Pérez',
-      phone: '555-123-45-67',
-      phoneCode: '+52',
-      city: 'Ciudad de México',
-      cp: '03100',
-      col: 'Roma Sur',
-      address: 'Calle Falsa #123',
-    },
-    {
-      name: 'Ana',
-      lastname: 'López',
-      phone: '735-140-66-36',
-      phoneCode: '+1',
-      city: 'Guadalajara',
-      cp: '44100',
-      col: 'Americana',
-      address: 'Av. Vallarta 456',
-    },
-  ];
+  savedAddresses: Observable<AddressReponse[]>;
 
   crearCotizacion() {
     if (!this.AuthService.isAuthenticated()) {
@@ -111,20 +96,30 @@ export class CartStockComponent {
     }, 2000);
   }
 
-  onSelectSavedAddress(value: number | string | null) {
-    const index = typeof value === 'string' ? parseInt(value, 10) : value;
-    if (index === null || isNaN(index) || index === -1) return;
+async onSelectSavedAddress(value: number | string | null) {
+  const index = typeof value === 'string' ? parseInt(value, 10) : value;
+  if (index === null || isNaN(index) || index === -1) return;
 
-    const selected = this.savedAddresses[index];
-    this.myFormData.patchValue({
-      name: selected.name,
-      lastname: selected.lastname,
-      phone: selected.phone,
-      phoneCode: selected.phoneCode,
-      city: selected.city,
-      cp: selected.cp,
-      col: selected.col,
-      address: selected.address,
-    });
+  try {
+    const addresses = await firstValueFrom(this.savedAddresses);
+    console.log(addresses);
+
+    const selected = addresses[index];
+
+    if (selected) {
+      this.myFormData.patchValue({
+        name: selected.name,
+        lastname: selected.lastname,
+        phone: selected.phone,
+        phoneCode: selected.codePhone,
+        city: selected.city,
+        cp: selected.cp,
+        col: selected.col,
+        address: selected.address,
+      });
+    }
+  } catch (error) {
+    console.error('Error fetching saved addresses', error);
   }
+}
 }
