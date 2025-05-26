@@ -26,12 +26,12 @@
 
             <dl class="flex items-center justify-between gap-4">
               <dt class="font-normal text-gray-500">Precio envio ({{quote.shippingType}}) </dt>
-              <dd class="font-medium text-gray-900">${{quote.shippingPrice}}</dd>
+              <dd class="font-medium text-gray-900">${{quote.shippingPrice | number:'1.2-2'}}</dd>
             </dl>
 
             <dl class="flex items-center justify-between gap-4">
               <dt class="font-normal text-gray-500">Descuento</dt>
-              <dd class="text-base font-medium text-green-500">-${{quote.price * quote.discount}}</dd>
+              <dd class="text-base font-medium text-green-500">-${{ ((quote.price + quote.shippingPrice)  * quote.discount) | number:'1.2-2'}}</dd>
             </dl>
           </div>
 
@@ -39,13 +39,13 @@
             class="flex items-center justify-between gap-4 border-t border-gray-200 pt-2"
           >
             <dt class="text-lg font-bold text-gray-900">Total</dt>
-            <dd class="text-lg font-bold text-gray-900">${{(quote.price - (quote.price * quote.discount)) + quote.shippingPrice}}</dd>
+            <dd class="text-lg font-bold text-gray-900">${{((quote.price + quote.shippingPrice) - ((quote.price + quote.shippingPrice)  * quote.discount)) | number:'1.2-2'  }}</dd>
           </dl>
         </div>
       </div>
       @if (quote.statusQuote === 'Pendiente') {
 
-      <app-options-quote (show)="recibirShow($event)"></app-options-quote>
+      <app-options-quote [quote]="quote" (show)="recibirShow($event)"></app-options-quote>
       }@else {
 
       <app-tracking-quote></app-tracking-quote>

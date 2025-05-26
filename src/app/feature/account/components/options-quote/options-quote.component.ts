@@ -1,8 +1,10 @@
 import { CheckoutService } from './../../services/checkout.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { QuotesService } from './../../services/quotes.service';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import Swal from 'sweetalert2';
+import Quotes from '../../interfaces/Quotes';
+import { Title } from 'chart.js';
 
 @Component({
   selector: 'app-options-quote',
@@ -10,8 +12,9 @@ import Swal from 'sweetalert2';
   styleUrl: './options-quote.component.css',
 })
 export class OptionsQuoteComponent {
-
   @Output() show = new EventEmitter<boolean>();
+
+  @Input() quote!: Quotes;
 
   constructor(
     private QuotesService: QuotesService,
@@ -50,12 +53,31 @@ export class OptionsQuoteComponent {
   acceptQuote() {
     const id = this.ActivatedRoute.snapshot.params['id'];
     this.enviarAlPadre();
-    // this.show = true;
 
-    // setTimeout(() => {
-    //   this.show = false;
-    // }, 2000);
+    const paymentData = this.quote.products.map((item) => {
+      return {
+        title: item.name,
+        price: item.unit_price,
+        quantity: item.quantity,
+      };
+    });
 
-    this.CheckoutService.onProceedToPay(id);
+    const paymentFinish = [
+      ...paymentData,
+      { title: 'Envio', price: this.quote.shippingPrice, quantity: 1 },
+    ];
+
+    // Mapeo de códigos de descuento
+    const discountCodes: { [key: number]: string } = {
+      0.05: 'Mc9k3tKm',
+      0.08: '8317STSG',
+      0.1: 'HaMdhPrT',
+      0.15: 'J30O6SMh',
+    };
+
+    // Obtener el código de descuento o un valor por defecto
+    const discount = discountCodes[this.quote.discount] || 'DES_NOT';
+
+    this.CheckoutService.onProceedToPay(id, paymentFinish, discount);
   }
 }

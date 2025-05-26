@@ -25,9 +25,16 @@ app.post('/checkout', async (req, res) => {
     }
   })
 
+  const cupon = req.body.descuento;
+
   const session = await stripe.checkout.sessions.create({
     line_items: [...items],
     mode: 'payment',
+          discounts: [
+        {
+          coupon: cupon, // Aquí va el ID del cupón creado en Stripe
+        },
+      ],
     success_url: `http://localhost:4200/thanks`,
     cancel_url: `${YOUR_DOMAIN}/cancel.html`
   })

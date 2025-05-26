@@ -57,7 +57,7 @@ import { PaymentComponent } from './feature/account/views/payment/payment.compon
 import { ConfirmComponent } from './feature/ecommerce/views/home/cart/confirm/confirm.component';
 import { LoadingOverlayComponent } from './feature/ecommerce/components/loading-overlay/loading-overlay.component';
 import { QuotesComponent } from './feature/account/views/account/quotes/quotes.component';
-import { AsyncPipe, NgStyle } from '@angular/common';
+import { AsyncPipe, DecimalPipe, NgStyle } from '@angular/common';
 import { Preview3DComponent } from './feature/ecommerce/components/preview3-d/preview3-d.component';
 import { ModalColorsComponent } from './components/modals/modal-colors/modal-colors.component';
 import { ButtonColorComponent } from './feature/ecommerce/components/button-color/button-color.component';
@@ -148,7 +148,7 @@ import { CardDetailsComponent } from './feature/account/components/card-details/
     FormCreateAddressComponent,
     CardDetailsComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, AsyncPipe, NgStyle, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, AsyncPipe, NgStyle, HttpClientModule, DecimalPipe],
   providers: [],
   bootstrap: [AppComponent],
 })

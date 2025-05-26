@@ -13,25 +13,15 @@ export class CheckoutService {
 
   constructor(private http: HttpClient, private QuotesService: QuotesService) {}
 
-  onProceedToPay(id: any): any {
+  onProceedToPay(id: any, items: any, descuento: string): any {
 
       this.QuotesService.updateQuoteStatusCode(id, 'Aceptado');
 
 
     return this.http
       .post(`${this._serverURL}/checkout`, {
-        items: [
-          {
-            title: 'Cabeza 3D',
-            price: 200,
-            quantity: 3,
-          },
-          {
-            title: 'Mano 3D',
-            price: 10,
-            quantity: 20,
-          },
-        ],
+        items: items,
+        descuento: descuento
       })
       .pipe(
         map(async (res: any) => {

@@ -170,7 +170,6 @@ export class QuotesService {
               material: 'PLA',
               relleno: 20,
               unit_price: 34.49,
-
             },
           ],
           discount: 0.15,
@@ -180,7 +179,8 @@ export class QuotesService {
         },
         {
           id: '#FWB139485699',
-          date: new Date(2025, 4, 24, 15, 30),
+          date: new Date(2025, 5, 26, 15, 30),
+
           address: {
             name: 'Ana',
             lastname: 'López',
@@ -191,7 +191,7 @@ export class QuotesService {
             col: 'Americana',
             address: 'Av. Vallarta 456',
           },
-          price: 1999,
+          price: 1893.6,
           status: 'Fabricando',
           paymentMethod: 'Visa',
           products: [
@@ -203,8 +203,7 @@ export class QuotesService {
               color: 'ROJO',
               material: 'PLA',
               relleno: 20,
-              unit_price: 35.00,
-
+              unit_price: 35.0,
             },
 
             {
@@ -216,8 +215,7 @@ export class QuotesService {
               color: 'BLANCO',
               material: 'PLA',
               relleno: 100,
-              unit_price: 25.00,
-
+              unit_price: 25.0,
             },
             {
               name: 'Kupplung Shield',
@@ -229,17 +227,17 @@ export class QuotesService {
               material: 'ABS',
               relleno: 100,
               unit_price: 29.68,
-
             },
           ],
-          discount: 0.5,
+          discount: 0.05,
           shippingPrice: 200,
           shippingType: 'Estandar',
           statusQuote: 'Pendiente',
         },
         {
           id: '#FWB139485633',
-          date: new Date(2025, 4, 24, 15, 30),
+          date: new Date(2025, 5, 26, 15, 30),
+
           address: {
             name: 'Ana',
             lastname: 'López',
@@ -250,7 +248,7 @@ export class QuotesService {
             col: 'Americana',
             address: 'Av. Vallarta 456',
           },
-          price: 1999,
+          price: 1893.6,
           status: 'Fabricando',
           paymentMethod: 'Visa',
           products: [
@@ -262,8 +260,7 @@ export class QuotesService {
               color: 'ROJO',
               material: 'PLA',
               relleno: 20,
-              unit_price: 35.00,
-
+              unit_price: 35.0,
             },
 
             {
@@ -275,8 +272,7 @@ export class QuotesService {
               color: 'BLANCO',
               material: 'PLA',
               relleno: 100,
-              unit_price: 25.00,
-
+              unit_price: 25.0,
             },
             {
               name: 'skull',
@@ -288,11 +284,56 @@ export class QuotesService {
               material: 'ABS',
               relleno: 100,
               unit_price: 29.68,
-
             },
           ],
-          discount: 0.5,
+          discount: 0.05,
           shippingPrice: 200,
+          shippingType: 'Estandar',
+          statusQuote: 'Pendiente',
+        },
+        {
+          id: '#FWB126467988',
+          date: new Date(2025, 5, 26, 15, 30),
+          address: {
+            name: 'Ana',
+            lastname: 'López',
+            phone: '735-140-66-36',
+            phoneCode: '+1',
+            city: 'Guadalajara',
+            cp: '44100',
+            col: 'Americana',
+            address: 'Av. Vallarta 456',
+          },
+          price: 215,
+          status: 'Fabricando',
+          paymentMethod: 'Visa',
+          products: [
+            {
+              name: 'Logo Mitsubichi',
+              fileURL:
+                'https://res.cloudinary.com/dcfcfu5o0/raw/upload/v1748265666/Mitsubishi_Logo_Keychain_job2r3.stl',
+              dimensions: { x: 38, y: 50, z: 30 },
+              quantity: 4,
+              color: 'ROJO',
+              material: 'PLA',
+              relleno: 20,
+              unit_price: 35.0,
+            },
+
+            {
+              name: 'Logo Mercedes',
+              fileURL:
+                'https://res.cloudinary.com/dcfcfu5o0/raw/upload/v1748265676/Mercedes_Benz_Logo_Keychain_u7qqxz.stl',
+              dimensions: { x: 38, y: 50, z: 30 },
+              quantity: 3,
+              color: 'BLANCO',
+              material: 'PLA',
+              relleno: 100,
+              unit_price: 25.0,
+            },
+          ],
+          discount: 0,
+          shippingPrice: 75,
           shippingType: 'Estandar',
           statusQuote: 'Pendiente',
         },
