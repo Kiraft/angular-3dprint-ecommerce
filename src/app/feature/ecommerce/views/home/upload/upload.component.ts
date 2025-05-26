@@ -17,7 +17,8 @@ export class UploadComponent {
     private uploadFilesService: UploadFilesService,
     private HttpClient: HttpClient,
     private UploadFilesService: UploadFilesService,
-    private ModalUploadServiceService : ModalUploadServiceService) {
+    private ModalUploadServiceService: ModalUploadServiceService
+  ) {
     this.filesList$ = this.uploadFilesService.getFileUploadList();
   }
 
@@ -29,22 +30,24 @@ export class UploadComponent {
   onSelectFile(event: any) {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files.length > 0) {
-      const file = input.files[0];
+      for (let index = 0; index < input.files.length; index++) {
+        const file = input.files[index];
 
-      const fileData: File3DModel = {
-        type: file.type,
-        name: file.name,
-        size: file.size,
-        file: file,
-        color: { name: 'BLANCO', colorCode: '#ffffff' },
-        material: { name: 'ABS' },
-        quantity: 1,
-        relleno: 20,
-        isTest: false
-      };
+        const fileData: File3DModel = {
+          type: file.type,
+          name: file.name,
+          size: file.size,
+          file: file,
+          color: { name: 'BLANCO', colorCode: '#ffffff' },
+          material: { name: 'ABS' },
+          quantity: 1,
+          relleno: 20,
+          isTest: false,
+        };
 
-      console.log('Archivo cargado:', event);
-      this.uploadFilesService.setFileUploadPush(fileData);
+        console.log('Archivo cargado:', event);
+        this.uploadFilesService.setFileUploadPush(fileData);
+      }
     }
   }
 
@@ -64,7 +67,7 @@ export class UploadComponent {
         material: { name: 'ABS' },
         quantity: 1,
         relleno: 20,
-        isTest: true
+        isTest: true,
       };
 
       console.log('Archivo STL cargado desde assets:', fileData);

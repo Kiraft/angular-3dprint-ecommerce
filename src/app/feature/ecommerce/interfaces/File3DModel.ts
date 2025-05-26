@@ -13,3 +13,5 @@ export default interface File3DModel {
   relleno?: number,
   isTest: boolean
 }
+
+

@@ -17,7 +17,6 @@ export class DetaillsComponent {
     routerActive: ActivatedRoute,
     private QuotesService: QuotesService
   ) {
-
     console.log('Lo que tiene la ruta');
 
     console.log(routerActive.snapshot.params['id']);
@@ -31,8 +30,6 @@ export class DetaillsComponent {
 
     console.log('Lo que se le pasa al servicio');
     console.log(formattedId);
-
-
   }
 
   recibirShow(evento: boolean) {
