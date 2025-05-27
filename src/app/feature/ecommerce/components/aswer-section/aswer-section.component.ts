@@ -44,7 +44,7 @@ export class AswerSectionComponent {
       id: 4,
       question:
         'El formato de archivo que intento cargar no es aceptado, ¿qué debo hacer?',
-      answer: `Si su modelo no tiene una extensión válida para la calculadora, deberá enviar un correo a vulkano@ayuda.com y proporcionarnos el archivo a
+      answer: `Si su modelo no tiene una extensión válida para la calculadora, deberá enviar un correo a vulcano@ayuda.com y proporcionarnos el archivo a
               través del formulario de contacto para su revisión manual.`,
       open: false,
     },
