@@ -75,6 +75,7 @@ export class QuotesService {
           shippingType: 'Estandar',
           statusQuote: 'Aceptado',
         },
+
         {
           id: '#FWB125467980',
           date: new Date(2024, 8, 15, 15, 30),
@@ -177,6 +178,7 @@ export class QuotesService {
           shippingType: 'Estandar',
           statusQuote: 'Aceptado',
         },
+        // Para testear
         {
           id: '#FWB139485699',
           date: new Date(2025, 5, 26, 15, 30),
@@ -234,9 +236,10 @@ export class QuotesService {
           shippingType: 'Estandar',
           statusQuote: 'Pendiente',
         },
+
         {
           id: '#FWB139485633',
-          date: new Date(2025, 5, 26, 15, 30),
+          date: new Date(2025, 5, 27, 15, 30),
 
           address: {
             name: 'Ana',
@@ -275,9 +278,9 @@ export class QuotesService {
               unit_price: 25.0,
             },
             {
-              name: 'skull',
+              name: 'Kupplung Shield',
               fileURL:
-                'https://res.cloudinary.com/dcfcfu5o0/raw/upload/v1748255648/skull_oruldc.stl',
+                'https://res.cloudinary.com/dcfcfu5o0/raw/upload/v1748256677/Escudo_llavero_velez.stl_fu45kv.stl',
               dimensions: { x: 38, y: 50, z: 30 },
               quantity: 20,
               color: 'AMARILLO',
@@ -291,9 +294,10 @@ export class QuotesService {
           shippingType: 'Estandar',
           statusQuote: 'Pendiente',
         },
+
         {
           id: '#FWB126467988',
-          date: new Date(2025, 5, 26, 15, 30),
+          date: new Date(2025, 5, 27, 15, 30),
           address: {
             name: 'Ana',
             lastname: 'López',

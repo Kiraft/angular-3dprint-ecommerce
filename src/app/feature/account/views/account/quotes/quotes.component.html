@@ -9,7 +9,7 @@
     <div
       class="mt-6 gap-4 space-y-4 sm:mt-0 sm:flex sm:items-center sm:justify-end sm:space-y-0"
     >
-      <div>
+      <!-- <div>
         <label
           for="order-type"
           class="sr-only mb-2 block text-sm font-medium text-gray-900"
@@ -25,11 +25,11 @@
           <option value="confirmed">Entregado</option>
           <option value="cancelled">Cancelado</option>
         </select>
-      </div>
+      </div> -->
+<!--
+      <span class="inline-block text-gray-500"> de </span> -->
 
-      <span class="inline-block text-gray-500"> de </span>
-
-      <div>
+      <!-- <div>
         <label
           for="duration"
           class="sr-only mb-2 block text-sm font-medium text-gray-900"
@@ -45,7 +45,7 @@
           <option value="Ultimos 6 meses">the last 6 months</option>
           <option value="Este año">this year</option>
         </select>
-      </div>
+      </div> -->
       <button
         (click)="openModalCode()"
         class="focus:outline-none text-white font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
@@ -69,6 +69,8 @@
 
             @for (q of quotes; track $index) {
 
+              
+
               <app-card-quote [quote]="q" ></app-card-quote>
             }
           }
@@ -78,7 +80,7 @@
         </div>
       </div>
 
-      <nav
+      <!-- <nav
         class="mt-6 flex items-center justify-center sm:mt-8"
         aria-label="Page navigation example"
       >
@@ -170,7 +172,7 @@
             </a>
           </li>
         </ul>
-      </nav>
+      </nav> -->
     </div>
   </div>
 </section>

@@ -5,7 +5,7 @@
     class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0"
   >
   <!-- render 3d -->
-    <app-preview3-d [file]="item.file" class="block h-24 w-32" />
+    <app-preview3-d [file]="item.file" [idFile]="id" class="block h-24 w-32" />
 
     <label for="counter-input" class="sr-only">Choose quantity:</label>
     <div class="flex items-center justify-between md:order-3 md:justify-end">
@@ -37,7 +37,7 @@
           type="text"
           id="counter-input"
           data-input-counter
-          class="w-10 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 dark:text-white"
+          class="w-[60px] shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 dark:text-white"
           placeholder=""
           value="{{ item.quantity }}"
           required
@@ -108,7 +108,7 @@
         <div class="w-full max-w-20">
           <button
             (click)="showModalColor(id)"
-            class="w-full px-2 text-left rounded-lg border border-black py-1 font-sans text-xs uppercase text-black"
+            class="w-full text-center p-1 rounded-lg border border-black font-sans text-xs uppercase text-black"
             data-ripple-dark="true"
           >
             {{ item.color?.name }}
@@ -118,7 +118,7 @@
         <div class="w-full max-w-10">
           <button
             (click)="showModalMaterial(id)"
-            class="w-full px-2 text-left rounded-lg border border-black py-1 font-sans text-xs uppercase text-black"
+            class="w-full text-center p-1 rounded-lg border border-black font-sans text-xs uppercase text-black"
             data-ripple-dark="true"
           >
             {{ item.material?.name }}
@@ -127,17 +127,17 @@
         <div class="w-full max-w-12">
           <button
             (click)="showModalRelleno(id)"
-            class="w-full px-2 text-left rounded-lg border border-black py-1 font-sans text-xs uppercase text-black"
+            class="w-full text-center p-1 rounded-lg border border-black font-sans text-xs uppercase text-black"
             data-ripple-dark="true"
           >
-            {{ item.relleno }}
+            {{ item.relleno }}%
           </button>
         </div>
 
         <button
           (click)="eliminarItem(id)"
           type="button"
-          class="inline-flex items-center text-sm font-medium text-red-600 hover:underline dark:text-red-500"
+          class="inline-flex items-center text-center text-sm font-medium text-red-600 hover:underline dark:text-red-500"
         >
           <svg
             class="me-1.5 h-5 w-5"

@@ -21,7 +21,7 @@ export class ColorsServicesService {
         },
                 {
           name: "VERDE",
-          colorCode: "##17871e"
+          colorCode: "#17871e"
         },
                 {
           name: "AMARILLO",

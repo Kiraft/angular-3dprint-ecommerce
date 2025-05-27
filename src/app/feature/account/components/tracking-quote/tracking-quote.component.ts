@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import Quotes from '../../interfaces/Quotes';
 
 @Component({
   selector: 'app-tracking-quote',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './tracking-quote.component.css'
 })
 export class TrackingQuoteComponent {
+
+  @Input() quote!: Quotes;
 
 }

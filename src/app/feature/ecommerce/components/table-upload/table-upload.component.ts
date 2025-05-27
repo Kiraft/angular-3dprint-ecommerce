@@ -26,6 +26,8 @@ export class TableUploadComponent {
   }
 
   deleteItemTable(i: number) {
+    console.log('Esta entrado al boton de borrar');
+
     this.uploadFilesService.removeFile(i);
   }
 

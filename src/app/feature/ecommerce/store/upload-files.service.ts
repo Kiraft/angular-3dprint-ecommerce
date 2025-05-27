@@ -12,26 +12,15 @@ import Relleno3DModel from '../interfaces/Relleno3DModel';
 export class UploadFilesService {
   private fileUploadSubject = new BehaviorSubject<File3DModel[]>([]);
   private fileUploadList: File3DModel[] = [];
-  // private cartSubject = new BehaviorSubject<File3DModel[]>([]);
-
 
   constructor() {}
 
-  // ✅ Observable para que otros componentes puedan suscribirse
   getFileUploadList(): Observable<File3DModel[]> {
     return this.fileUploadSubject.asObservable();
   }
 
-  // getCartItems(): Observable<File3DModel[]> {
-  //   return this.cartSubject.asObservable();
-  // }
-
-  // addProductCart() {
-  //   this.cartSubject.next([...this.fileUploadList]);
-  // }
-
-  // ✅ Método para agregar archivo y emitir nueva lista
   async setFileUploadPush(file: File3DModel): Promise<void> {
+    console.log(this.fileUploadList);
     const dimensions = await this.getSTLDimensions(file.file);
     const updateFile: File3DModel = {
       ...file,
@@ -44,7 +33,13 @@ export class UploadFilesService {
 
   // ✅ Método opcional para eliminar archivos, si lo necesitas
   removeFile(index: number): void {
-    this.fileUploadList.splice(index, 1);
+    console.log("Esta es la lista antes de borrar",this.fileUploadList);
+    const i =  this.fileUploadList.splice(index, 1);
+    console.log('Este es el index que sepasa: ',index);
+    console.log('Este se borro: ',i);
+
+    console.log('Esta es la lista despues de borrar',this.fileUploadList);
+
     this.fileUploadSubject.next([...this.fileUploadList]);
   }
 
@@ -99,17 +94,21 @@ export class UploadFilesService {
 
   incrementQuantity(index: number): void {
     if (this.fileUploadList[index]) {
-      this.fileUploadList[index].quantity =
-        (this.fileUploadList[index].quantity || 0) + 1;
-      this.fileUploadSubject.next([...this.fileUploadList]);
+      const current = this.fileUploadList[index].quantity || 1;
+      if (current < 200) {
+        this.fileUploadList[index].quantity = current + 1;
+        this.fileUploadSubject.next([...this.fileUploadList]);
+      }
     }
   }
 
   decrementQuantity(index: number): void {
     if (this.fileUploadList[index]) {
-      const current = this.fileUploadList[index].quantity || 0;
-      this.fileUploadList[index].quantity = current > 1 ? current - 1 : 1;
-      this.fileUploadSubject.next([...this.fileUploadList]);
+      const current = this.fileUploadList[index].quantity || 1;
+      if (current > 1) {
+        this.fileUploadList[index].quantity = current - 1;
+        this.fileUploadSubject.next([...this.fileUploadList]);
+      }
     }
   }
 

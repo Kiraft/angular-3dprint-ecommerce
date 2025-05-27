@@ -33,13 +33,18 @@
           </thead>
           <tbody class="text-sm divide-y divide-gray-100">
             @for (file of fileModelsTranfer; track $index) {
+            {{
+              $index
+            }}
             <tr>
               <td class="align-top p-2 whitespace-nowrap">
                 <div class="flex items-center w-16">
                   <div class="w-20 h-20 flex-shrink-0 mr-2 sm:mr-3">
                     <button (click)="deleteItemTable($index)">
-
-                      <i class="fas fa-times text-2xl" style="color: #ea3434; "></i>
+                      <i
+                        class="fas fa-times text-2xl"
+                        style="color: #ea3434"
+                      ></i>
                     </button>
 
                     <app-preview3-d [file]="file.file"></app-preview3-d>
@@ -64,32 +69,35 @@
                 <div class="w-full">
                   <p class="text-left mb-1">Material:</p>
                   <button
-                  (click)="showModalMaterial($index)"
+                    (click)="showModalMaterial($index)"
                     class="w-full text-left rounded-lg border border-black py-1 px-2 font-sans text-xs uppercase text-black"
                     data-ripple-dark="true"
                   >
-                    {{file.material?.name}}
+                    {{ file.material?.name }}
                   </button>
                 </div>
                 <div class="w-full">
                   <p class="text-left mb-1">Color:</p>
                   <button
-                  (click)="showModalColor($index)"
-                    class="w-full text-left rounded-lg border border-black py-1 px-2 font-sans text-xs uppercase text-black"
+                    (click)="showModalColor($index)"
+                    class="w-full text-left rounded-lg border flex items-center justify-between border-black py-1 px-2 font-sans text-xs uppercase text-black"
                     data-ripple-dark="true"
                   >
-                    {{file.color?.name}}
+                    {{ file.color?.name }}
+                    <div
+                      class="w-4 h-4 rounded-full ml-2 border-[1px] border-black"
+                      [ngStyle]="{ 'background-color': file.color?.colorCode }"
+                    ></div>
                   </button>
                 </div>
                 <div class="w-full">
                   <p class="text-left mb-1">Relleno:</p>
                   <button
                     (click)="showModalRelleno($index)"
-
                     class="w-full text-left rounded-lg border border-black py-1 px-2 font-sans text-xs uppercase text-black"
                     data-ripple-dark="true"
                   >
-                    {{file.relleno}}%
+                    {{ file.relleno }}%
                   </button>
                 </div>
               </td>
@@ -131,9 +139,9 @@
                       type="text"
                       id="counter-input"
                       data-input-counter
-                      class="shrink-0 text-gray-900 dark:text-white border-0 bg-transparent text-sm font-normal focus:outline-none focus:ring-0 max-w-[2.5rem] text-center"
+                      class="shrink-0 text-gray-900 dark:text-white border-0 bg-transparent text-sm font-normal focus:outline-none focus:ring-0 max-w-[60px] text-center"
                       placeholder=""
-                      value="{{file.quantity}}"
+                      value="{{ file.quantity }}"
                       required
                     />
                     <button
@@ -160,7 +168,6 @@
                       </svg>
                     </button>
                   </div>
-
                 </form>
               </td>
 
@@ -176,20 +183,12 @@
   </div>
 </section>
 
-@switch (modalType$ | async) {
-  @case ('color') {
-    <app-modal-colors />
-  }
-  @case ('material') {
-    <app-modal-materials />
-  }
-  @case ('relleno') {
-    <app-modal-relleno></app-modal-relleno>
-  }
-  @case ('precios') {
-    <app-modal-precios></app-modal-precios>
-  }
-}
-
-
-
+@switch (modalType$ | async) { @case ('color') {
+<app-modal-colors />
+} @case ('material') {
+<app-modal-materials />
+} @case ('relleno') {
+<app-modal-relleno></app-modal-relleno>
+} @case ('precios') {
+<app-modal-precios></app-modal-precios>
+} }

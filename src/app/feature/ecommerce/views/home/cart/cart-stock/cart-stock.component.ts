@@ -55,7 +55,9 @@ export class CartStockComponent {
     });
 
     this.savedAddresses = this.http.get<AddressReponse[]>(
-      `${environment.springURL}/users/${this.AuthService.getUserIdentity()?.id}/address`
+      `${environment.springURL}/users/${
+        this.AuthService.getUserIdentity()?.id
+      }/address`
     );
   }
 
@@ -92,34 +94,46 @@ export class CartStockComponent {
     this.loading = true;
     setTimeout(() => {
       this.loading = false;
-      this.router.navigate(['/cart/confirm']);
+      const dataform = this.myFormData.value;
+      this.UploadFilesService.clearFiles();
+      this.router.navigate(['/cart/confirm'], {
+        queryParams: {
+          name: dataform.name,
+          lastname: dataform.lastname,
+          phoneCode: dataform.phoneCode,
+          phone: dataform.phone,
+          date: Date.now,
+          address: dataform.address,
+          city: dataform.city,
+        },
+      });
     }, 2000);
   }
 
-async onSelectSavedAddress(value: number | string | null) {
-  const index = typeof value === 'string' ? parseInt(value, 10) : value;
-  if (index === null || isNaN(index) || index === -1) return;
+  async onSelectSavedAddress(value: number | string | null) {
+    const index = typeof value === 'string' ? parseInt(value, 10) : value;
+    if (index === null || isNaN(index) || index === -1) return;
 
-  try {
-    const addresses = await firstValueFrom(this.savedAddresses);
-    console.log(addresses);
+    try {
+      const addresses = await firstValueFrom(this.savedAddresses);
+      console.log(addresses);
 
-    const selected = addresses[index];
+      const selected = addresses[index];
 
-    if (selected) {
-      this.myFormData.patchValue({
-        name: selected.name,
-        lastname: selected.lastname,
-        phone: selected.phone,
-        phoneCode: selected.codePhone,
-        city: selected.city,
-        cp: selected.cp,
-        col: selected.col,
-        address: selected.address,
-      });
+      if (selected) {
+        this.myFormData.patchValue({
+          name: selected.name,
+          lastname: selected.lastname,
+          phone: selected.phone,
+          phoneCode: selected.codePhone,
+          city: selected.city,
+          cp: selected.cp,
+          col: selected.col,
+          address: selected.address,
+        });
+      }
+    } catch (error) {
+      console.error('Error fetching saved addresses', error);
     }
-  } catch (error) {
-    console.error('Error fetching saved addresses', error);
   }
-}
 }
