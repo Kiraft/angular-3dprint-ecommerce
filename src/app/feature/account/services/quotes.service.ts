@@ -193,13 +193,13 @@ export class QuotesService {
             col: 'Americana',
             address: 'Av. Vallarta 456',
           },
-          price: 1893.6,
+          price: 1200,
           status: 'Fabricando',
           paymentMethod: 'Visa',
           products: [
             {
-              name: 'jinshi',
-              fileURL: 'assets/localmodels/3dQuotes/q1/jinshi.stl',
+              name: 'Clipper',
+              fileURL: 'https://res.cloudinary.com/dcfcfu5o0/raw/upload/v1748341802/Clipper_Sleeve_-_Horse_crvomf.stl',
               dimensions: { x: 38, y: 50, z: 30 },
               quantity: 30,
               color: 'ROJO',
@@ -209,27 +209,17 @@ export class QuotesService {
             },
 
             {
-              name: 'lego',
+              name: 'Leelo Heart',
               fileURL:
-                'https://res.cloudinary.com/dcfcfu5o0/raw/upload/v1748255647/lego_ehd49j.STL',
+                'https://res.cloudinary.com/dcfcfu5o0/raw/upload/v1748342177/Sizzling_Leelo_fk9tbd.stl',
               dimensions: { x: 38, y: 50, z: 30 },
-              quantity: 10,
+              quantity: 20,
               color: 'BLANCO',
               material: 'PLA',
               relleno: 100,
               unit_price: 25.0,
             },
-            {
-              name: 'Kupplung Shield',
-              fileURL:
-                'https://res.cloudinary.com/dcfcfu5o0/raw/upload/v1748256677/Escudo_llavero_velez.stl_fu45kv.stl',
-              dimensions: { x: 38, y: 50, z: 30 },
-              quantity: 20,
-              color: 'AMARILLO',
-              material: 'ABS',
-              relleno: 100,
-              unit_price: 29.68,
-            },
+
           ],
           discount: 0.05,
           shippingPrice: 200,
