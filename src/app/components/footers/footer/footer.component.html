@@ -8,23 +8,24 @@
       <div class="w-full lg:w-4/12 px-4">
         <div class="flex flex-wrap items-top mb-6">
           <div class="w-full lg:w-8/12 px-4 mr-auto">
-            <span
-              class="block uppercase text-white text-sm font-semibold mb-2"
-            >
+            <span class="block uppercase text-white text-sm font-semibold mb-2">
               Contactanos
             </span>
             <ul class="list-unstyled">
               <li class="flex">
-                <i class="fas fa-envelope mr-2" style="color: #ffffff;"></i>
+                <i class="fas fa-envelope mr-2" style="color: #ffffff"></i>
                 <a
                   class="text-white hover:text-white font-semibold block pb-2 text-sm"
                   href="mailto:info@vulcano.com"
                 >
-                  info_vulcano.com
+                  {{ email }}
                 </a>
               </li>
               <li class="flex">
-                <i class="fas fa-phone-alt fa-sm mr-2" style="color: #ffffff;"></i>
+                <i
+                  class="fas fa-phone-alt fa-sm mr-2"
+                  style="color: #ffffff"
+                ></i>
                 <a
                   class="text-white hover:text-white font-semibold block pb-2 text-sm"
                   href="https://blog.creative-tim.com?ref=na-footer"
@@ -33,13 +34,15 @@
                 </a>
               </li>
               <li class="flex">
-                <i class="fas fa-map-marker-alt mr-2" style="color: #ffffff;"></i>
+                <i
+                  class="fas fa-map-marker-alt mr-2"
+                  style="color: #ffffff"
+                ></i>
                 <a
                   class="text-white hover:text-white font-semibold block pb-2 text-sm"
                   href="https://www.github.com/creativetimofficial?ref=na-footer"
                 >
-                  Avenida Colon, 32
-                  46185 La Pobla de Vallbona (Valencia)
+                  Avenida Colon, 32 46185 La Pobla de Vallbona (Valencia)
                 </a>
               </li>
             </ul>
@@ -58,7 +61,7 @@
           en todo Mexico.
         </h5>
         <div class="mt-6 lg:mb-0 mb-6 flex items-center justify-center">
-          <button
+          <!-- <button
             class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
             type="button"
           >
@@ -69,18 +72,13 @@
             type="button"
           >
             <i class="fab fa-facebook-square"></i>
-          </button>
+          </button> -->
           <button
             class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
             type="button"
+            (click)="openInstagram()"
           >
-            <i class="fab fa-dribbble"></i>
-          </button>
-          <button
-            class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-            type="button"
-          >
-            <i class="fab fa-github"></i>
+            <i class="fab fa-instagram"></i>
           </button>
         </div>
       </div>
@@ -105,7 +103,7 @@
               <li>
                 <a
                   class="text-white hover:text-white font-semibold block pb-2 text-sm"
-                  href="https://blog.creative-tim.com?ref=na-footer"
+                  href="https://stripe.com/en-mx"
                 >
                   Formas de pago
                 </a>
@@ -114,22 +112,16 @@
                 <a
                   class="text-white hover:text-white font-semibold block pb-2 text-sm"
                   href="https://www.github.com/creativetimofficial?ref=na-footer"
+                  target="_blank"
                 >
                   Políticas de privacidad
                 </a>
               </li>
+
               <li>
                 <a
                   class="text-white hover:text-white font-semibold block pb-2 text-sm"
-                  href="https://www.creative-tim.com/bootstrap-themes/free?ref=na-footer"
-                >
-                  Garantía
-                </a>
-              </li>
-              <li>
-                <a
-                  class="text-white hover:text-white font-semibold block pb-2 text-sm"
-                  href="https://www.creative-tim.com/bootstrap-themes/free?ref=na-footer"
+                  routerLink="/devoluciones"
                 >
                   Devoluciones
                 </a>

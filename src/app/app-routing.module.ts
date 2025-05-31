@@ -27,6 +27,8 @@ import { ThankspayComponent } from './feature/account/views/account/thankspay/th
 import { FormAccountComponent } from './feature/account/components/form-account/form-account.component';
 import { SettingsComponent } from './feature/account/components/settings/settings.component';
 import { FormCreateAddressComponent } from './feature/account/components/form-create-address/form-create-address.component';
+import { DevolucionesComponent } from './feature/ecommerce/views/home/devoluciones/devoluciones.component';
+import { PliticasComponent } from './feature/ecommerce/views/home/pliticas/pliticas.component';
 
 const routes: Routes = [
   // auth views
@@ -78,6 +80,8 @@ const routes: Routes = [
       { path: 'stock', component: StockComponent },
       { path: 'upload', component: UploadComponent },
       { path: 'landing', component: LandingComponent },
+      { path: 'devoluciones', component: DevolucionesComponent },
+      { path: 'politicas', component: PliticasComponent },
       { path: '', redirectTo: 'landing', pathMatch: 'full' },
     ],
   },

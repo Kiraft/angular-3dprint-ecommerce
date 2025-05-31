@@ -4,7 +4,7 @@
   <div
     class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0"
   >
-  <!-- render 3d -->
+    <!-- render 3d -->
     <app-preview3-d [file]="item.file" [idFile]="id" class="block h-24 w-32" />
 
     <label for="counter-input" class="sr-only">Choose quantity:</label>
@@ -37,7 +37,7 @@
           type="text"
           id="counter-input"
           data-input-counter
-          class="w-[60px] shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 dark:text-white"
+          class="w-[60px] shrink-0 border-0 bg-[#E6E6E6] text-center text-sm font-medium text-gray-900 focus:outline-none focus:bg-[#E6E6E6] "
           placeholder=""
           value="{{ item.quantity }}"
           required
@@ -80,42 +80,23 @@
         >{{ item.name }}</a
       >
 
-      <div class="flex items-center gap-2">
-        <!-- Boton favoritos -->
-        <!-- <button
-          type="button"
-          class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 hover:underline dark:text-gray-400 dark:hover:text-white"
-        >
-          <svg
-            class="me-1.5 h-5 w-5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
-            />
-          </svg>
-          Editar
-        </button> -->
-        <div class="w-full max-w-20">
+      <div class="w-full flex items-center gap-2">
+
+        <div class="w-full min-w-[100px] max-w-20">
           <button
             (click)="showModalColor(id)"
-            class="w-full text-center p-1 rounded-lg border border-black font-sans text-xs uppercase text-black"
+            class="w-full text-center flex items-center justify-center p-1 rounded-lg border border-black font-sans text-xs uppercase text-black"
             data-ripple-dark="true"
           >
             {{ item.color?.name }}
+            <div
+              class="w-4 h-4 rounded-full ml-2 border-[1px] border-black"
+              [ngStyle]="{ 'background-color': item.color?.colorCode }"
+            ></div>
           </button>
         </div>
 
-        <div class="w-full max-w-10">
+        <div class="w-full min-w-[50px] max-w-10">
           <button
             (click)="showModalMaterial(id)"
             class="w-full text-center p-1 rounded-lg border border-black font-sans text-xs uppercase text-black"
@@ -124,6 +105,8 @@
             {{ item.material?.name }}
           </button>
         </div>
+
+
         <div class="w-full max-w-12">
           <button
             (click)="showModalRelleno(id)"
@@ -158,6 +141,8 @@
           </svg>
           Eliminar
         </button>
+
+
       </div>
     </div>
   </div>

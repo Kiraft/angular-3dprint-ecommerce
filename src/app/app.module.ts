@@ -79,6 +79,8 @@ import { SettingsComponent } from './feature/account/components/settings/setting
 import { AddressCardComponent } from './feature/account/components/address-card/address-card.component';
 import { FormCreateAddressComponent } from './feature/account/components/form-create-address/form-create-address.component';
 import { CardDetailsComponent } from './feature/account/components/card-details/card-details.component';
+import { DevolucionesComponent } from './feature/ecommerce/views/home/devoluciones/devoluciones.component';
+import { PliticasComponent } from './feature/ecommerce/views/home/pliticas/pliticas.component';
 
 
 @NgModule({
@@ -146,7 +148,9 @@ import { CardDetailsComponent } from './feature/account/components/card-details/
     SettingsComponent,
     AddressCardComponent,
     FormCreateAddressComponent,
-    CardDetailsComponent
+    CardDetailsComponent,
+    DevolucionesComponent,
+    PliticasComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, AsyncPipe, NgStyle, HttpClientModule, DecimalPipe],
   providers: [],
